@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GeneReg-SFT structured reasoning supervision v1",
+  "type": "object",
+  "required": ["example_id", "input", "observations", "inference_rules", "answer"],
+  "properties": {
+    "example_id": {"type": "string"},
+    "input": {"type": "object"},
+    "observations": {
+      "type": "array",
+      "items": {"type": "object", "required": ["evidence_span", "observation"], "properties": {"evidence_span": {"type": "string"}, "observation": {"type": "string"}}}
+    },
+    "inference_rules": {"type": "array", "items": {"type": "string"}},
+    "answer": {"type": "object"}
+  },
+  "additionalProperties": false
+}
+
