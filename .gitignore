@@ -1,0 +1,29 @@
+# Local IDE and Python cache
+.vscode/
+__pycache__/
+*.py[cod]
+
+# Credentials and machine-specific settings
+.env
+*.env
+!configs/remote.example.env
+
+# Large, reproducible, or local-only working data
+data/raw/
+data/intermediate/
+data/gold/
+data/sft/
+outputs/
+
+# Local review workbooks and ad-hoc exports; frozen releases live under data/benchmarks/.
+/*.html
+/human_*.jsonl
+/human_*.json
+/manual_*.html
+/both_mentioned_*.html
+/phase3_*.html
+/qwen_*.html
+/qwen_*.json
+/qwen_vs_*.json
+/qwen_vs_*.md
+/opencompass_qwen25_*.json

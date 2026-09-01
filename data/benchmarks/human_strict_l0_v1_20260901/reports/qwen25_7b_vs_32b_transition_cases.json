@@ -1,0 +1,565 @@
+{
+  "artifact_version": "opencompass_strict_l0_model_transition_cases_v1",
+  "baseline_model": "Qwen2.5-7B-Instruct",
+  "candidate_model": "Qwen2.5-32B-AWQ",
+  "total_changed_items": 37,
+  "wrong_to_correct": 33,
+  "correct_to_wrong": 4,
+  "items": [
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_016",
+      "pmid": "15767669",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: TATA-binding protein (TBP)-like factor (TLF) is a functional regulator of transcription: reciprocal regulation of the neurofibromatosis type 1 and c-fos genes by TLF/TRF2 and TBP.\nAbstract: The lack of direct targets for TATA-binding protein (TBP)-like factors (TLFs) confounds the understanding of their role in gene expression. Here we report that human TLF (also called TBP-related factor 2 [TRF2]) activates a number of different genes, including the neurofibromatosis type 1 (NF1) gene. The overexpression of TLF increases the amount of NF1 mRNA in cells. In vivo, TLF binds to and upregulates transcription from a fragment of the NF1 promoter. In vitro, purified TLF-TFIIA binds directly to the same NF1 promoter fragment that is required for TLF responsiveness in cells. Furthermore, targeted deletion of TLF in mice reduces NF1 levels. In contrast, TLF inhibits transcription driven by a fragment from the TATA-containing c-fos promoter by sequestering TFIIA. TBP affects the NF1 and c-fos promoters in a manner reciprocal to that of TLF, stimulating the c-fos promoter and inhibiting NF1 transcription. We conclude that TLF is a functional regulator of transcription with targets distinct from those of TBP.\nCandidate regulator: TBP\nCandidate target: NF1\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Activation",
+        "B": "Repression"
+      },
+      "gold_option": "B",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_021",
+      "pmid": "23565190",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Interaction between retinoid acid receptor-related orphan receptor alpha (RORA) and neuropeptide S receptor 1 (NPSR1) in asthma.\nAbstract: Retinoid acid receptor-related Orphan Receptor Alpha (RORA) was recently identified as a susceptibility gene for asthma in a genome-wide association study. To investigate the impact of RORA on asthma susceptibility, we performed a genetic association study between RORA single nucleotide polymorphisms (SNPs) in the vicinity of the asthma-associated SNP (rs11071559) and asthma-related traits. Because the regulatory region of a previously implicated asthma susceptibility gene, Neuropeptide S receptor 1 (NPSR1), has predicted elements for RORA binding, we hypothesized that RORA may interact biologically and genetically with NPSR1. 37 RORA SNPs and eight NPSR1 SNPs were genotyped in the Swedish birth cohort BAMSE (2033 children) and the European cross-sectional PARSIFAL study (1120 children). Seven RORA SNPs confined into a 49 kb region were significantly associated with physician-diagnosed childhood asthma. The most significant association with rs7164773 (T/C) was driven by the CC genotype in asthma cases (OR = 2.0, 95%CI 1.36-2.93, p = 0.0003 in BAMSE; and 1.61, 1.18-2.19, p = 0.002 in the combined BAMSE-PARSIFAL datasets, respectively), and strikingly, the risk effect was dependent on the Gln344Arg mutation in NPSR1. In cell models, stimulation of NPSR1 activated a pathway including RORA and other circadian clock genes. Over-expression of RORA decreased NPSR1 promoter activity further suggesting a regulatory loop between these genes. In addition, Rora mRNA expression was lower in the lung tissue of Npsr1 deficient mice compared to wildtype littermates during the early hours of the light period. We conclude that RORA SNPs are associated with childhood asthma and show epistasis with NPSR1, and the interaction between RORA and NPSR1 may be of biological relevance. Combinations of common susceptibility alleles and less common functional polymorphisms may modify the joint risk effects on asthma susceptibility.\nCandidate regulator: RORA\nCandidate target: NPSR1\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Activation",
+        "B": "Repression"
+      },
+      "gold_option": "B",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_110",
+      "pmid": "19380588",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: ZBTB2, a novel master regulator of the p53 pathway.\nAbstract: We found that ZBTB2, a POK family transcription factor, is a potent repressor of the ARF-HDM2-p53-p21 pathway important in cell cycle regulation. ZBTB2 repressed transcription of the ARF, p53, and p21 genes, but activated the HDM2 gene. In particular, ZBTB2 repressed transcription of the p21 gene by acting on the two distal p53 binding elements and the proximal Sp1 binding GC-box 5/6 elements. ZBTB2 directly interacted with Sp1 via its POZ domain and zinc fingers, which was important in the repression of transcription activation by Sp1. ZBTB2 and Sp1 competed with each other in binding to the GC-box 5/6 elements and the two p53 binding elements. ZBTB2 directly interacted with p53 via its zinc fingers, inhibiting p53 binding and repressing transcription activation by p53. The POZ domain, required for transcription repression, interacted with corepressors such as BCoR, NCoR, and SMRT. The interactions deacetylated histones Ac-H3 and -H4 at the proximal promoter. Although ectopic ZBTB2 stimulated cell proliferation, knock-down of ZBTB2 expression decreased cell proliferation and DNA synthesis. Overall, our data suggest that ZBTB2 is a potential proto-oncogenic master control gene of the p53 pathway and, in particular, is a potent transcription repressor of the cell cycle arrest gene p21 by inhibiting p53 and Sp1.\nCandidate regulator: ZBTB2\nCandidate target: MDM2\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Activation",
+        "B": "Repression"
+      },
+      "gold_option": "A",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_113",
+      "pmid": "22105368",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Epigenetic inactivation of paired box gene 5, a novel tumor suppressor gene, through direct upregulation of p53 is associated with prognosis in gastric cancer patients.\nAbstract: Using genome-wide methylation screening, we identified that paired box gene 5 (PAX5) is involved in human cancer development. However, the function of PAX5 in gastric cancer (GC) development is largely unclear. We analyzed its epigenetic inactivation, biological functions and clinical application in GC. PAX5 was silenced in seven out of eight GC cell lines. A significant downregulation was also detected in paired gastric tumors compared with adjacent non-cancerous tissues. The downregulation of PAX5 was closely linked to the promoter hypermethylation status and could be restored with demethylation treatment. Ectopic expression of PAX5 in silenced GC cell lines (AGS and BGC823) inhibited colony formation and cell viability, arrested cell cycle, induced apoptosis, suppressed cell migration and invasion and repressed tumorigenicity in nude mice. Consistent with the induction of apoptosis by PAX5 in vitro, terminal deoxynucleotidyl transferase-mediated dUTP-digoxigenin nick end labeling (TUNEL) staining showed significantly enhanced apoptotic cells in PAX5-expressed tumors compared with the vector control tumors. On the other hand, knockdown of PAX5 by PAX5-short hairpin RNA increased the cell viability and proliferation. The anti-tumorigenic function of PAX5 was revealed to be mediated by upregulating downstream targets of tumor protein 53 (p53), p21, BCL2-associated X protein, metastasis suppressor 1 and tissue inhibitors of metalloproteinase 1, and downregulating BCL2, cyclin D1, mesenchymal-epithelial transition factor (MET) and matrix metalloproteinase 1. Immunoprecipitation assay demonstrated that PAX5 directly bound to the promoters of p53 and MET. Moreover, PAX5 hypermethylation was detected in 77% (144 of 187) of primary GCs compared with 10.5% (2/19) of normal gastric tissues (P<0.0001). GC patients with PAX5 methylation had a significant poor survival compared with the unmethylated cases as demonstrated by Cox regression model and log-rank test. In conclusion, PAX5 is a novel functional tumor suppressor in gastric carcinogenesis. Detection of methylated PAX5 can be utilized as an independent prognostic factor in GC.\nCandidate regulator: PAX5\nCandidate target: CDKN1A\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Activation",
+        "B": "Repression"
+      },
+      "gold_option": "A",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_131",
+      "pmid": "17300840",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: MHC class II transactivator (CIITA) expression is upregulated in multiple myeloma cells by IFN-gamma.\nAbstract: The MHC class II transactivator (CIITA) acts in the cell nucleus as the master regulator of MHC class II (MHC II) gene expression. It is important to study CIITA regulation in multiple myeloma since MHC expression is central to ability of myeloma cells to present antigen and to the ability of the immune system to recognize and destroy this malignancy. Regulation of CIITA by IFN-gamma in B lymphocytes occurs through the CIITA type IV promoter (pIV), one of the four potential promoters (pI-pIV) of this gene. To investigate regulation of CIITA by IFN-gamma in multiple myeloma cells, first the ability of these cells to respond to IFN-gamma was examined. RT-PCR analyses show that IFN-gammaR1, the IFN-gamma-binding chain of the IFN-gamma receptor, is expressed in myeloma cells and IRF-1 expression increases in response to IFN-gamma treatment. Western blotting demonstrates that STAT1 is activated by phosphorylation in response to IFN-gamma. RT-PCR and functional promoter analyses show that IFN-gamma upregulates the activity of CIITA pIV, as does ectopic expression of IRF-1 or IRF-2. In vivo protein/DNA binding studies demonstrate protein binding at the GAS, E box and IRF-E sites. In vitro studies confirm the binding of IRF-1 and IRF-2 to CIITA pIV. Although multiple myeloma cells express PRDI-BF1/Blimp-1, a factor that represses both the CIITA type III and IV promoters, they retain the capability to upregulate CIITA pIV and MHC II expression in response to IFN-gamma treatment. These findings are the first to demonstrate that although PRDI-BF1/Blimp-1 diminishes the constitutive ability of these cells to present antigen by limiting CIITA and MHC II expression, it is possible to enhance this expression through the use of cytokines, like IFN-gamma.\nCandidate regulator: PRDM1\nCandidate target: CIITA\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "A",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_144",
+      "pmid": "24330518",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: The cancer gene WWOX behaves as an inhibitor of SMAD3 transcriptional activity via direct binding.\nAbstract: The WW domain containing protein WWOX has been postulated to behave as a tumor suppressor in breast and other cancers. Expression of this protein is lost in over 70% of ER negative tumors. This prompted us to investigate the phenotypic and gene expression effects of loss of WWOX expression in breast cells. Gene expression microarrays and standard in vitro assays were performed on stably silenced WWOX (shRNA) normal breast cells. Bioinformatic analyses were used to identify gene networks and transcriptional regulators affected by WWOX silencing. Co-immunoprecipitations and GST-pulldowns were used to demonstrate a direct interaction between WWOX and SMAD3. Reporter assays, ChIP, confocal microscopy and in silico analyses were employed to determine the effect of WWOX silencing on TGFβ-signaling. WWOX silencing affected cell proliferation, motility, attachment and deregulated expression of genes involved in cell cycle, motility and DNA damage. Interestingly, we detected an enrichment of targets activated by the SMAD3 transcription factor, including significant upregulation of ANGPTL4, FST, PTHLH and SERPINE1 transcripts. Importantly, we demonstrate that the WWOX protein physically interacts with SMAD3 via WW domain 1. Furthermore, WWOX expression dramatically decreases SMAD3 occupancy at the ANGPTL4 and SERPINE1 promoters and significantly quenches activation of a TGFβ responsive reporter. Additionally, WWOX expression leads to redistribution of SMAD3 from the nuclear to the cytoplasmic compartment. Since the TGFβ target ANGPTL4 plays a key role in lung metastasis development, we performed a meta-analysis of ANGPTL4 expression relative to WWOX in microarray datasets from breast carcinomas. We observed a significant inverse correlation between WWOX and ANGPTL4. Furthermore, the WWOX(lo)/ANGPTL4(hi) cluster of breast tumors is enriched in triple-negative and basal-like sub-types. Tumors with this gene expression signature could represent candidates for anti-TGFβ targeted therapies. We show for the first time that WWOX modulates SMAD3 signaling in breast cells via direct WW-domain mediated binding and potential cytoplasmic sequestration of SMAD3 protein. Since loss of WWOX expression increases with breast cancer progression and it behaves as an inhibitor of SMAD3 transcriptional activity these observations may help explain, at least in part, the paradoxical pro-tumorigenic effects of TGFβ signaling in advanced breast cancer.\nCandidate regulator: SMAD3\nCandidate target: PTHLH\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "B",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_147",
+      "pmid": "17431117",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Chemotherapeutic drugs sensitize cancer cells to TRAIL-mediated apoptosis: up-regulation of DR5 and inhibition of Yin Yang 1.\nAbstract: Several chemotherapeutic drugs in combination with tumor necrosis factor-related apoptosis-inducing ligand (TRAIL) result in reversal of resistance to TRAIL-mediated apoptosis through up-regulation of DR5 expression. The promoter of DR5 has one putative binding site for the transcription repressor Yin Yang 1 (YY1), and thus, we hypothesized that the sensitizing drugs may inhibit YY1. We have found that treatment of tumor cells with various chemotherapeutic drugs inhibited nuclear factor-kappaB. We examined whether drugs also inhibit YY1 activity and whether YY1 inhibition correlates with up-regulation of DR5 expression and sensitization of cells to TRAIL-induced apoptosis. The TRAIL- and drug-resistant prostate carcinoma PC-3 cell line was treated with CDDP, VP-16, ADR, and vincristine. DR5 luciferase reporter constructs and small interfering RNA against YY1 were used to determine the role of YY1 in DR5 transcription. Pretreatment of PC-3 cells and other tumor cell lines with various chemotherapeutic drugs sensitized the cells to TRAIL-induced apoptosis concurrently with up-regulation of DR5 expression and inhibition of YY1 expression and its DNA-binding activity. The baseline luciferase activity in PC-3 cells transfected with the wild-type DR5 reporter was significantly augmented in cells transfected with DR5 constructs carrying deletions or mutation in the YY1-binding site. Treatment with drug enhanced DR5 wild-type luciferase activity, with no increase in cells transfected with the YY1-deleted or YY1-mutated constructs. Cells transfected with YY1 small interfering RNA showed up-regulation of DR5 expression and sensitization to TRAIL-mediated apoptosis. The findings provide evidence that drug-induced sensitization of tumor cells to TRAIL is mediated, in part, by inhibition of the transcription repressor YY1 and up-regulation of DR5 expression. Hence, YY1 may be a potential therapeutic target to reverse resistance to TRAIL-induced apoptosis.\nCandidate regulator: YY1\nCandidate target: TNFRSF10B\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "A",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_158",
+      "pmid": "22085718",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Inhibition of PCGF2 enhances granulocytic differentiation of acute promyelocytic leukemia cell line HL-60 via induction of HOXA7.\nAbstract: This study tested the hypothesis that Polycomb Repressive Complex 1 (PRC1) may play a negative role in the granulocytic differentiation of acute promyelocytic leukemia (APL) cells. We first examined the expression of PRC1 genes during all-trans retinoic acid (ATRA)-mediated differentiation of human HL-60 cells, and identified PCGF2 as a gene down-regulated by ATRA in a time-dependent manner. Upon gene silencing of PCGF2 with lentiviral short hairpin RNA, granulocytic differentiation was induced as assessed by differentiation marker gene expression, nitroblue tetrazolium staining, Wright-Giemsa staining, and cell cycle analysis. We next identified HOXA7 as a homeobox gene up-regulated by ATRA and successfully induced granulocytic differentiation by overexpression of HOXA7. We next tested the relationship between PCGF2 and HOXA7 by quantifying the changes in HOXA7 and PCGF2 expression upon PCGF2 gene silencing and HOXA7 overexpression, respectively. HOXA7 expression was up-regulated by PCGF2 gene silencing, while PCGF2 expression remained unchanged by ectopic HOXA7 expression, suggesting PCGF2 as acting upstream of HOXA7. Finally, chromatin immunoprecipitation assay was performed with HOXA7 chromatin. We observed gene-specific reduction in direct binding of Pcgf2 protein to HOXA7 chromatin upon PCGF2 gene silencing. Taken together, these results support the notion that down-regulation of PCGF2 is sufficient to induce granulocytic differentiation of HL-60 cells via de-repression of HOXA7 gene expression. In conclusion, we report that PCGF2, a PRC1 gene, played a negative role in the granulocytic differentiation of human APL cells.\nCandidate regulator: PCGF2\nCandidate target: HOXA7\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "A",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_168",
+      "pmid": "10597242",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Induction of the TRAIL receptor KILLER/DR5 in p53-dependent apoptosis but not growth arrest.\nAbstract: The TRAIL death receptor KILLER/DR5 is induced by DNA damaging agents in wild-type p53-expressing cells. Here we show that, unlike the p53-target CDK-inhibitor p21WAF1/CIP1, the TRAIL death receptor KILLER/DR5 is only induced in cells undergoing p53-dependent apoptosis and not cell cycle arrest. Thus GM glioblastoma cells carrying an inducible MMTV-driven p53 gene undergo cell cycle arrest and upregulate p21 but not KILLER/DR5 expression upon dexamethasone exposure. WI38 normal lung fibroblasts undergoing cell cycle arrest in response to ionizing irradiation also induce p21 but not KILLER/DR5 gene expression. KILLER/DR5 upregulation is also deficient in irradiated lymphoblastoid cells derived from patients with Ataxia Teleangiectasia suggesting a role for the ATM-p53 pathway in regulating KILLER/DR5 expression after DNA damage. Inhibition of transcription by Actinomycin D blocks both KILLER/DR5 and p21 induction in cells undergoing p53-dependent apoptosis. Our results suggest that the p53-dependent transcriptional induction of KILLER/DR5 death receptor is restricted to cells undergoing apoptosis and not cells undergoing exclusively p53-dependent G1 arrest.\nCandidate regulator: TP53\nCandidate target: CDKN1A\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Activation",
+        "B": "Repression"
+      },
+      "gold_option": "A",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_181",
+      "pmid": "19501055",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Drug discovery targeting epigenetic codes: the great potential of UHRF1, which links DNA methylation and histone modifications, as a drug target in cancers and toxoplasmosis.\nAbstract: UHRF1 plays a central role in transferring methylation status from mother cells to daughter cells. Its SRA domain recognizes hemi-methylated DNA that appears in daughter DNA strands during duplication of DNA. UHRF1 recruits DNMT1 to the site and methylates both strands. UHRF1 also binds to HDAC1 and di- and tri-methyl K9 histone H3, ubiquitinates histone H3, and associates with heterochromatin formation, indicating that UHRF1 links histone modifications, DNA methylation, and chromatin structure. UHRF1 is a direct target of E2F1 and promotes G1/S transition. The tumor suppressor p53, which is deficient in 50% of cancers, down-regulates UHRF1 through up-regulation of p21/WAF1 and subsequent deactivation of E2F1. The expression levels of UHRF1 are up-regulated in many cancers, probably partially because of the absence of wild type p53, but it is probably regulated by several other factors. Knockdown of UHRF1 expression in cancer cells suppressed cell growth, suggesting that UHRF1 can be a useful anticancer drug target. Recently, it was revealed that UHRF1 plays important roles not only in carcinogenesis, but also in toxoplasmosis, which is occasionally fatal to people with a weakened immune system, and can cause blindness in the major pathology of ocular toxoplasmosis. Toxoplasma gondii, which causes toxoplasmosis, utilizes UHRF1 to control the cell cycle phase and enhance its proliferation. Thus, knockdown of UHRF1 can be effective at stopping the proliferation of the parasites in infected cells. In this review, we discuss several possible methods that can inhibit the multiple unique functions of UHRF1, which can be utilized for treating cancers and toxoplasmosis.\nCandidate regulator: TP53\nCandidate target: CDKN1A\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "B",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_189",
+      "pmid": "20972454",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Mutant p53 subverts p63 control over KLF4 expression in keratinocytes.\nAbstract: Genetic experiments established that p63 is crucial for the development and maintenance of pluri-stratified epithelia and KLF4 for the barrier function of the skin. KLF4 is one of the factors that reprogram differentiated cells to iPS. We investigated the relationship between p63 and KLF4 using RNA interference, overexpression, chromatin immunoprecipitation and transient transfections with reporter constructs. We find that p63 directly represses KLF4 in normal keratinocytes (KCs) by binding to upstream promoter sites. Unlike p63, KLF4 levels are high in the upper layers of human skin and increase upon differentiation of KCs in vitro. In HaCaT KCs, which harbor two mutant alleles of p53, inactivation of p63 and of mutant p53 leads to KLF4 repression. p63 and p53 mutants are bound to sites in the KLF4 core promoter. Importantly, expression of the H179Y and R282Q p53 mutants in primary KCs is sufficient to activate endogenous KLF4. Finally, immunohistochemical analysis of tissue arrays confirms increased coexpression of KLF4 and mutant p53 in squamous cell carcinomas. Our data indicate that suppression of KLF4 is part of the growth-promoting strategy of p63 in the lower layers of normal epidermis, and that tumor-predisposing p53 mutations hijack p63 to a different location on the promoter, turning it into an activator of this reprogramming factor.\nCandidate regulator: TP63\nCandidate target: KLF4\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "A",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "CORRECT_TO_WRONG",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_193",
+      "pmid": "21176776",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: PU.1 directly regulates retinoic acid-induced expression of RIG-G in leukemia cells.\nAbstract: RIG-G is a retinoic acid- or interferon-induced gene with potential anti-proliferation function. However, the mechanism underlying ATRA-induced RIG-G induction is not completely understood. Here, we demonstrate that ATRA up-regulates the expression of PU.1, which in turn directly binds to the promoter and increases the expression of RIG-G gene. Luciferase reporter assay and electrophoretic mobility shift assay reveal that PU.1 preferentially binds to one of the two putative binding sites on the RIG-G promoter. Moreover, silencing of PU.1 by shRNA markedly inhibited ATRA- but not IFNα-induced expression of RIG-G. These data provide new insight into the mechanism of ATRA-induced RIG-G expression.\nCandidate regulator: SPI1\nCandidate target: IFIT3\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "B",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_209",
+      "pmid": "22641097",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Transcription factor Runx2 is a regulator of epithelial-mesenchymal transition and invasion in thyroid carcinomas.\nAbstract: Runx2/Cbfa1 is a member of the Runt-related transcription factor family and is an essential regulator of osteoblast/chondrocyte differentiation. Recently, aberrant expression of Runx2 and its oncogenic functions have been identified in the progression and metastasis of human cancers. In this study, we investigated the expression profile of Runx family genes in normal thyroid tissue, non-neoplastic but abnormal thyroid tissue, various types of thyroid tumors and representative human thyroid carcinoma cell lines. Using reverse transcriptase-PCR and western blotting, we found that Runx2 was consistently upregulated in papillary carcinomas (PCs) and thyroid carcinoma cell lines compared with normal thyroid tissue. With immunohistochemistry, we observed negative or focal immunoreactivity of Runx2 in the nuclei of normal thyroid follicular cells. None of the non-neoplastic thyroid tissues, including Graves' thyroid and adenomatous goiter, had diffuse positivity of Runx2. Expression of Runx2 in benign follicular adenomas varied from negative to diffusely positive. Meanwhile, all malignant thyroid tumors showed some Runx2 immunopositivity. It was diffuse and intense in 83% (19/23) of PCs, 71% (5/7) of follicular carcinomas (FCs) and 40% (4/10) of undifferentiated carcinomas (UCs). In thyroid carcinoma cell lines, the MEK inhibitor U0126 suppressed Runx2, suggesting an association of the MAPK/ERK pathway with Runx2 regulation. Effective silencing of Runx2 by short interfering RNA (siRNA) demonstrated downregulation of EMT-related molecules (SNAI2, SNAI3 and TWIST1), MMP2 and vasculogenic factors (VEGFA and VEGFC) in thyroid carcinoma cells. We also confirmed that Runx2 silencing suppresses thyroid carcinoma cell invasion in transwell assays. In conclusion, this study provides insight into the potential molecular mechanism of thyroid cancer invasion. Our data suggest that enhanced Runx2 is functionally linked to tumor invasion and metastasis of thyroid carcinoma by regulating EMT-related molecules, matrix metalloproteinases and angiogenic/lymphangiogenic factors.\nCandidate regulator: RUNX2\nCandidate target: SNAI3\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "B",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_212",
+      "pmid": "11788008",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Leptin signal transduction in the HP75 human pituitary cell line.\nAbstract: Leptin is an adipocyte-derived cytokine with many functions including signaling the status of body energy stores through activation of the leptin receptor (OBR). Activation of the long form of OB-R (OB-Rb) results in JAK2 phosphorylation, activation of STATs, and subsequent gene expression. Activated STAT3 induces SOCS-3 expression in some cell types, which in turn down-regulates the JAK/STAT pathway. Although both leptin and OB-R are expressed in pituitary cells, the mechanism of signal transduction and its regulation in this organ has not been studied extensively. In these experiments we show that leptin reduces proliferation in a human pituitary cell line (HP75) and also increased apoptosis in these cells. Leptin also increased SOCS-3 mRNA and protein expression and tyrosine-phosphorylation in the HP75 human pituitary cell line. These findings suggest that SOCS-3 plays an important role in the inhibition of proximal leptin signal transduction in the anterior pituitary.\nCandidate regulator: STAT3\nCandidate target: SOCS3\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "B",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_213",
+      "pmid": "22859294",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Annexin A2 silencing induces G2 arrest of non-small cell lung cancer cells through p53-dependent and -independent mechanisms.\nAbstract: Annexin A2 (ANXA2) overexpression is required for cancer cell proliferation; however, the molecular mechanisms underlying ANXA2-mediated regulation of the cell cycle are still unknown. ANXA2 is highly expressed in non-small cell lung cancer (NSCLC) and is positively correlated with a poor prognosis. NSCLC A549 cells lacking ANXA2 exhibited defects in tumor growth in vivo and in cell proliferation in vitro without cytotoxicity. ANXA2 knockdown induced cell cycle arrest at G(2) phase. Unexpectedly, ANXA2 silencing increased the expression of p53 and its downstream genes, which resulted in p53-dependent and -independent G(2) arrest. Aberrant JNK inactivation, which was observed in ANXA2-deficient cells, inhibited cell proliferation following G(2) arrest. A lack of ANXA2 caused a loss of JNK-regulated c-Jun expression, resulting in an increase in p53 transcription. These results demonstrate a novel role for ANXA2 in NSCLC cell proliferation by facilitating the cell cycle partly through the regulation of p53 via JNK/c-Jun.\nCandidate regulator: JUN\nCandidate target: TP53\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Activation",
+        "B": "Repression"
+      },
+      "gold_option": "B",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "CORRECT_TO_WRONG",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_223",
+      "pmid": "12759366",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Adjacent sequence controls the response polarity of nitric oxide-sensitive Sp factor binding sites.\nAbstract: Nitric oxide (NO*) and cAMP-dependent protein kinase (PKA) inhibitors up-regulate tumor necrosis factor alpha (TNFalpha) by decreasing Sp1 binding to a proximal GC box element. Here, elements flanking GC boxes were tested for their role in determining whether Sp sites act as activators or repressors. Promoter studies in receptive human cell lines demonstrated that NO* down-regulated endothelial NO* synthase (eNOS) but up-regulated TNFalpha. Like TNFalpha, Sp1 binding to the eNOS promoter was decreased by NO* and a PKA inhibitor, H89, and increased by a PKA activator, dibutyryl cAMP (Bt2cAMP). For either promoter, mutation of Sp sites abolished NO* responses. In contrast, mutation of an upstream AP1 site in the TNFalpha promoter (not present in eNOS) maintained NO* responsiveness, but reversed the direction of NO* and cAMP effects. Using artificial constructs, NO* increased transcription when Sp and AP1 sites were both present (TNFalpha-like response), but decreased it when the adjacent AP1 site was disrupted (eNOS-like response). NO*, H89, and Bt2cAMP were found to produce reciprocal protein binding changes at contiguous AP1 and Sp sites (p < 0.0001 for an interaction). Chromatin immunoprecipitation assays demonstrated that Sp1 and to a lesser extent Sp3 bound to the GC box regions of eNOS and TNFalpha in intact cells. Thus, this NO*- and cAMP-responsive regulatory module has a Sp site sensor variably coupled to an adjacent element that determines response polarity. These results define a composite element that can utilize secondary inputs to convert off signals to on, thereby conferring complex functionalities to the same DNA binding motif.\nCandidate regulator: SP1\nCandidate target: TNF\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "A",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_246",
+      "pmid": "12539169",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Von Hippel-Lindau disease.\nAbstract: Von Hippel-Lindau (VHL) disease is an uncommon, autosomal dominant hereditary multitumor syndrome caused by germline alterations of the VHL gene, which has been cloned recently and identified as a tumor suppressor gene. The major lesions in VHL disease include hemangioblastomas in the central nervous system and retina, clear cell renal cell carcinomas, pheochromocytomas, pancreatic tumors, epididymal cystadenomas, endolymphatic sac tumors, carcinoid tumors, and multiple cysts of the kidney, pancreas, and epididymis. Compared with sporadic ones, the tumors in VHL disease develop at an earlier age and often multifocally. Histologic features of VHL tumors are characterized by their high degree of vascularization and the presence of a clear cell component. Hypervascularization is induced by overexpression of vascular endothelial growth factor (VEGF), and because the principal function of VHL protein is the negative regulation of hypoxia-inducible mRNAs including VEGF mRNA, inactivation of VHL gene plays critical roles in angiogenesis of the VHL tumors. In addition, since VHL protein is also required for the down-regulation of transcription activity of certain genes for the cell growth and cell cycle, inactivation of VHL gene may contribute to tumorigenesis of the VHL tumors. A significant difference in the frequency of types of VHL gene mutation has been noted among the affected families, known as the genotype-phenotype correlations.\nCandidate regulator: VHL\nCandidate target: VEGFA\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "A",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_249",
+      "pmid": "20357037",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Hepatitis C virus core protein genotype 3a increases SOCS-7 expression through PPAR-{gamma} in Huh-7 cells.\nAbstract: Hepatitis C virus (HCV) core protein genotype 3a induces the expression of suppressor of cytokine signalling protein 7 (SOCS-7), which is partially involved in the development of insulin resistance. The aim of the present study was to investigate the mechanism through which the core protein regulates SOCS-7 expression. We have explored, in the in vitro model of Huh-7 cells expressing the HCV core protein of genotype 3a, whether the expression of SOCS-7 as well as of other members of the SOCS family (SOCS-1 and SOCS-3) was activated by the STAT3 pathway, using immunoblotting and real-time PCR upon alpha interferon (IFN-alpha) treatment. We found that, whilst IFN-alpha treatment induced STAT3 activation and consequently SOCS-1 and SOCS-3 upregulation in HCV genotype 3a core-expressing Huh-7 cells, SOCS-7 mRNA expression was independent of STAT3 and seemed to be modulated by peroxisome proliferator-activated receptor gamma (PPAR-gamma) activity, as demonstrated by quantitative real-time PCR and immunoblot detection after treatment with the PPAR-gamma agonist rosiglitazone or the PPAR-gamma antagonist GW9262. In contrast to the other studied members of the SOCS family (1 and 3), which are regulated by STAT3 activation, SOCS-7 expression appears to be STAT3-independent and seems to be regulated instead by PPAR-gamma. This is the first report proposing a molecular mechanism through which the HCV core protein (genotype 3a) modulates SOCS-7 expression.\nCandidate regulator: STAT3\nCandidate target: SOCS1\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Activation",
+        "B": "Repression"
+      },
+      "gold_option": "A",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_250",
+      "pmid": "14990861",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Oct-4 knockdown induces similar patterns of endoderm and trophoblast differentiation markers in human and mouse embryonic stem cells.\nAbstract: The transcription factor Oct-4 is a marker of pluripotency in mouse and human embryonic stem (ES) cells. Previous studies using a tetracycline-regulated Oct-4 transgene in the ZHBTc4 cell line demonstrated that downregulation of Oct-4 expression induced dedifferentiation into trophoblast, a lineage mouse ES cells do not normally generate. We found that transfection of Oct-4-specific short interfering RNA significantly reduced expression and functional activity of Oct-4 in mouse and human ES cells, enabling its role to be compared in both cell types. In mouse ES cells, Oct-4 knockdown produced a pattern of morphological differentiation and increase in expression of the trophoblast-associated transcription factor Cdx2, similar to that triggered by suppressing the Oct-4 transgene in the ZHBTc4 cell line. In addition, downregulation of Oct-4 was accompanied by increased expression of the endoderm-associated genes Gata6 and alpha-fetoprotein, and a gene trap associated with primitive liver/yolk sac differentiation. In human ES cells, Oct-4 knockdown also induced morphological differentiation coincident with the upregulation of Gata6. The induction of Cdx2 and other trophoblast-associated genes, however, was dependent on the culture conditions. These results establish the general requirement for Oct-4 in maintaining pluripotency in ES cells. Moreover, the upregulation of endoderm-associated markers in both mouse and human ES cells points to overlap between development of trophoblast and endoderm differentiation.\nCandidate regulator: POU5F1\nCandidate target: GATA6\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "A",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_252",
+      "pmid": "20631301",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Sirtuin 1 regulation of developmental genes during differentiation of stem cells.\nAbstract: The longevity-promoting NAD+-dependent class III histone deacetylase Sirtuin 1 (SIRT1) is involved in stem cell function by controlling cell fate decision and/or by regulating the p53-dependent expression of NANOG. We show that SIRT1 is down-regulated precisely during human embryonic stem cell differentiation at both mRNA and protein levels and that the decrease in Sirt1 mRNA is mediated by a molecular pathway that involves the RNA-binding protein HuR and the arginine methyltransferase coactivator-associated arginine methyltransferase 1 (CARM1). SIRT1 down-regulation leads to reactivation of key developmental genes such as the neuroretinal morphogenesis effectors DLL4, TBX3, and PAX6, which are epigenetically repressed by this histone deacetylase in pluripotent human embryonic stem cells. Our results indicate that SIRT1 is regulated during stem cell differentiation in the context of a yet-unknown epigenetic pathway that controls specific developmental genes in embryonic stem cells.\nCandidate regulator: SIRT1\nCandidate target: DLL4\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Activation",
+        "B": "Repression"
+      },
+      "gold_option": "B",
+      "gold_label": "Repression",
+      "qwen25_7b_prediction": "Activation",
+      "qwen25_32b_prediction": "Repression"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_400",
+      "pmid": "15930301",
+      "task": "KNOWN_DIRECTION",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Loss of RUNX3 expression significantly affects the clinical outcome of gastric cancer patients and its restoration causes drastic suppression of tumor growth and metastasis.\nAbstract: Identification of precise prognostic marker and effective therapeutic target is pivotal in the treatment of gastric cancer. In the present study, we determined the level of RUNX3 expression in gastric cancer cells and gastric cancer specimens and the impact of its alteration on cancer biology and clinical outcome. There was a loss or substantial decrease of RUNX3 protein expression in 86 cases of gastric tumors as compared with that in normal gastric mucosa (P < 0.0001), which was significantly associated with inferior survival duration (P = 0.0005). In a Cox proportional hazards model, RUNX3 expression independently predicted better survival (P = 0.036). Moreover, various human gastric cancer cell lines also exhibited loss or drastic decrease of RUNX3 expression. Enforced restoration of RUNX3 expression led to down-regulation of cyclin D1 but to up-regulation of p27, caspase 3, 7, and 8 expression, cell cycle arrest, and apoptosis in vitro, and dramatic attenuation of tumor growth and abrogation of metastasis in animal models. Therefore, we offered both clinical and mechanistic evidence that RUNX3 was an independent prognostic factor and a potential therapeutic target for gastric cancer.\nCandidate regulator: RUNX3\nCandidate target: CASP3\nBased only on the title and abstract, which direction is directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "Repression",
+        "B": "Activation"
+      },
+      "gold_option": "B",
+      "gold_label": "Activation",
+      "qwen25_7b_prediction": "Repression",
+      "qwen25_32b_prediction": "Activation"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_054",
+      "pmid": "21272048",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: A common promoter variant of TBX21 is associated with allele specific binding to Yin-Yang 1 and reduced gene expression.\nAbstract: T-bet is a key regulator for the lineage commitment in CD4 T helper (Th) 1 cells by activating the hallmark production of interferon-γ, and its expression level is linked to autoimmune, infectious, and allergic diseases. A T to C base substitution has been identified at position -1993 in the TBX21 (encoding T-bet) promoter and has been associated with asthma and systemic lupus erythematosus. This study aimed to investigate the molecular mechanisms responsible for the influence of the T-1993C polymorphism on transcription and its functional effect by luciferase reporter, EMSAs, Chromatin immunoprecipitation assay, and flow cytometric analysis of intracellular T-bet, IFN-γ and IL-4 expression in activated CD4(+) T cells. The presence of a -1993T allele obviously increases promoter activity compared with that of a promoter with a -1993C allele. TBX21 promoter carrying -1993C allele possesses significantly stronger binding affinity to the Yin Yang 1 (YY1) transcription factor than that carrying -1993T allele. YY1 overexpression decreased TBX21 promoter function in a T cell line, demonstrating that this element functions as a repressor. The C to T base exchange relieves the repression mediated by YY1. The individuals carrying -1993C allele were determined to have significantly diminished expression of TBX21 and IFN-γ and increased IL-4 production in cells compared with the individuals carrying -1993T allele (P < 0.05). These findings demonstrate that the TBX21 T-1993C polymorphism represses TBX21 expression and Th1 cytokine production through control of YY1, which might result in the imbalance between Th1 and Th2 immune responses in autoimmune or allergic diseases.\nCandidate regulator: TBX21\nCandidate target: YY1\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "NO_REGULATION",
+        "B": "REGULATION_PRESENT"
+      },
+      "gold_option": "A",
+      "gold_label": "NO_REGULATION",
+      "qwen25_7b_prediction": "REGULATION_PRESENT",
+      "qwen25_32b_prediction": "NO_REGULATION"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_085",
+      "pmid": "8642300",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Human germinal center B cells express the apoptosis-inducing genes Fas, c-myc, P53, and Bax but not the survival gene bcl-2.\nAbstract: During T cell-dependent antibody responses, B cells within germinal centers (GC) alter the affinity of their antigen receptor by introducing somatic mutations into variable region of immunoglobulin (IgV) genes. During this process, GC B cells are destined to die unless positively selected by antigens and CD40-ligand. To understand survival/death control of germinal center B cell, the expression of four apoptosis-inducing genes, Fas, c-myc, Bax, and P53, together with the survival gene bcl-2, has been analyzed herein among purified tonsillar naive, GC, and memory B cells. IgD+CD38- naive B cells were separated into CD23- (mature B cell [Bm]1) subset and CD23+ (Bm2), IgD-CD38+ GC B cells were separated into subsets of CD77+ centroblasts (Bm3) and CD77- centrocytes (Bm4), whereas IgD-CD38- cells represented the Bm5 memory B cell subset. Sequence analysis of IgV region genes indicated that somatic hypermutation was triggered in the Bm3 centroblast subset. Here we show that bcl-2 is only detectable with naive (Bm1 and 2) and memory B cell (Bm5) subsets, whereas all four apoptosis-inducing genes were most significantly expressed within GC B cells. Fas was equally expressed in Bm3 centroblasts and Bm4 centrocytes, whereas Bax was most significantly expressed in Bm4 centrocytes. c-myc, a positive regulator of cell cycle, was most significantly expressed in proliferating Bm3 centroblasts, whereas P53, a negative regulator of cell cycle, was most signficantly expressed in nonproliferating Bm4 centrocytes. The present results indicate that the survival/death of GC B cells are regulated by the up- and downregulation of multiple genes, among which the expression of c-myc and P53 in the absence of bcl-2 may prime the proliferating Bm3 centroblasts and nonproliferating Bm4 centrocytes to apoptosis.\nCandidate regulator: TP53\nCandidate target: GC\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "NO_REGULATION",
+        "B": "REGULATION_PRESENT"
+      },
+      "gold_option": "A",
+      "gold_label": "NO_REGULATION",
+      "qwen25_7b_prediction": "REGULATION_PRESENT",
+      "qwen25_32b_prediction": "NO_REGULATION"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_124",
+      "pmid": "20372076",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: p53 inactivation by MDM2 and MDMX negative feedback loops in testicular germ cell tumors.\nAbstract: Testicular germ cell tumors (TGCT) are unique in their excellent response to DNA-damaging chemotherapy. Mutation of p53 is rare in both untreated and relapsed TGCTs, suggesting that p53 fails to respond effectively against malignant transformation in germ cells. Previous studies implicated the presence of a poorly defined TGCT-specific mechanism of p53 inactivation. Here we show that disruption of p53-MDM2 binding using the MDM2-specific inhibitor Nutlin activates p53 in TGCT cells and is sufficient to induce strong apoptosis. Knockdown of MDMX cooperates with Nutlin to activate p53. Surprisingly, we found that p53 activation induced a two-fold increase in MDMX mRNA and protein expression in TGCT cells. A p53-responsive promoter is identified in MDMX intron 1 that contains a functional p53-binding site, suggesting that MDMX also functions as a negative feedback regulator of p53 in a cell line-dependent fashion. These findings suggest that MDM2 and MDMX are responsible for the functional inactivation of p53 in TGCT. Furthermore, TGCT cells are unique in having a strong apoptosis response to p53. Direct activation of p53 by targeting MDM2 and MDMX may provide a backup approach for the treatment of TGCTs resistant to DNA-damaging drugs.\nCandidate regulator: TP53\nCandidate target: MDM4\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "REGULATION_PRESENT",
+        "B": "NO_REGULATION"
+      },
+      "gold_option": "A",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_152",
+      "pmid": "18590053",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Methylation-mediated downregulation of the B-cell translocation gene 3 (BTG3) in breast cancer cells.\nAbstract: The incidence of solid tumors is low in individuals with Down syndrome (trisomy 21), suggesting the presence of one or more tumor suppressor genes on chromosome 21. Consistent with this finding, previous work has demonstrated frequent loss of heterozygosity (LOH) of a small (< 5 Mb) region of chromosome 21, particularly in breast cancer, indicating that a tumor suppressor gene(s) may be located in this region. We investigated the expression of BTG3, a gene in the LOH region on chromosome 21, in breast cancer cell lines. BTG3 has been shown to be a negative regulator of SRC tyrosine kinase, and BTG3 is a target of p53 and inhibits the activity of the E2F1 transcription factor. Here we demonstrate that in a wide variety of human breast cancer cell lines, BTG3 expression is markedly reduced in the absence of detectable mutations in the BTG3 promoter and coding region. In these cell lines, the promoter region of the BTG3 gene is hypermethylated when compared to normal breast cell lines. BTG3 gene expression can be restored by treatment with 5'-aza-deoxycytidine, an inhibitor of DNA methylation. These data support the hypothesis that BTG3 may act to suppress tumorigenesis and that hypermethylation is an important mechanism for inactivation of BTG3 and perhaps other tumor suppressor genes. The findings are consistent with a role for an additional copy of BTG3 in the reduced incidence of breast cancer in individuals with Down syndrome.\nCandidate regulator: TP53\nCandidate target: BTG3\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "REGULATION_PRESENT",
+        "B": "NO_REGULATION"
+      },
+      "gold_option": "A",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_191",
+      "pmid": "16901973",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Involvement of the pituitary-specific transcription factor pit-1 in somatolactotrope cell growth and death: an approach using dominant-negative pit-1 mutants.\nAbstract: The anterior pituitary-specific transcription factor Pit-1 was initially identified and cloned as a transactivator of the prolactin (PRL) and GH genes and later as a regulator of the TSHb gene. It was found to be a major developmental regulator, because natural Pit-1 gene mutations cause a dwarf phenotype in mice and cause combined pituitary hormone deficiency associated with pituitary hypoplasia in humans. To further investigate the growth-promoting effects of Pit-1, we used a strategy based on the use of dominant-negative Pit-1 mutants as an alternative means of inactivating endogenous Pit-1 functions. R271W, a Pit-1 mutant identified in one allele in patients with severe combined pituitary hormone deficiency, and Pit-1Delta1-123, a deletion mutant in which only the DNA binding domain of Pit-1 is conserved, were generated, and their ability to abolish the effects of the endogenous native Pit-1 in the differentiated proliferating somatolactotrope GH4C1 cell line was investigated. Enforced expression of the dominant-negative mutants in GH4C1 cells using recombinant lentiviral vectors decreased the levels of expression of known Pit-1 target genes such as PRL and GH, abolished the hormone release, and reduced cell viability by decreasing the growth rate and inducing apoptosis via a caspase-independent pathway. These results show for the first time that the growth-promoting effects of Pit-1 are at least partly due to the fact that this transcription factor prevents apoptotic cell death.\nCandidate regulator: POU1F1\nCandidate target: TSHB\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "REGULATION_PRESENT",
+        "B": "NO_REGULATION"
+      },
+      "gold_option": "A",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_200",
+      "pmid": "10811295",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Involvement of AP-1 and steroidogenic factor (SF)-1 in the cAMP-dependent induction of human adrenocorticotropic hormone receptor (ACTHR) promoter.\nAbstract: Adrenocorticotropic hormone receptor (ACTHR) is expressed predominantly in the adrenal glands, and its expression is upregulated by its own ligand, ACTH, via a cAMP-dependent pathway. In the present study, we characterized the 5'-regulatory region of human ACTHR gene to elucidate the molecular mechanisms underlying its adrenal-specific and ACTH/cAMP-dependent expression. The promoter region (-1017/+47 when the transcription start site is regarded as + 1) and its serial 5'-deletions (-764/+47, -503/+-47, -214/+47 and -56/+47) were ligated into the upstream of a luciferase (luc) reporter gene. These constructs were transfected into adrenocortical Y1 cells or non-adrenal JEG3 and Cos-1 cells. In all the cell lines, the luc activity gradually increased with serial 5'-deletions and the maximum activity was conferred by - 56/+ 47. However, the magnitude of luc activity of each deletion construct in non-adrenal cells was much less than that in Y1 cells, suggesting that the promoter functions in an adrenal-specific manner. We identified two Steroidogenic Factor (SF)-1-binding sites at -209 and -35. Electrophoretic mobility shift assay (EMSA) demonstrated that both sites bind to SF-1. Mutation of both sites significantly decreased the activity of -214/+47 promoter in Y1 cells. Transfection of SF-1-expressing plasmid into non-adrenal cells significantly increased the promoter activity, suggesting that SF-1 plays a role in the tissue-specific expression of human ACTHR gene. We identified the region, -764 to -503, that was required for the forskolin/cAMP responsiveness of the promoter. This region contains one AP-1 site. EMSA revealed that the binding of AP-1 to this site increased significantly upon treatment of Y1 cells with forskolin. Mutation of the site abolished the forskolin-responsiveness. In non-adrenal cells, the forskolin-responsiveness was observed only when SF-1-expressing plasmid was cotransfected. This is the first demonstration that both AP-1 and SF-1 are required for the cAMP-dependent induction of human ACTHR gene.\nCandidate regulator: NR5A1\nCandidate target: MC2R\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "NO_REGULATION",
+        "B": "REGULATION_PRESENT"
+      },
+      "gold_option": "B",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_216",
+      "pmid": "22465052",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: A novel obatoclax derivative, SC-2001, induces apoptosis in hepatocellular carcinoma cells through SHP-1-dependent STAT3 inactivation.\nAbstract: We investigated the effects of a novel compound, SC-2001, on hepatocellular carcinoma (HCC). SC-2001, which is structurally related to the Mcl-1 inhibitor obatoclax, showed better antitumor effects than obatoclax in HCC cell lines, including HepG2, PLC5 and Huh-7. Like obatoclax, SC-2001 inhibited the protein-protein interactions between Mcl-1 and Bak. However, SC-2001 downregulated the protein levels of Mcl-1 by reducing its transcription whereas obatoclax had no significant effect on Mcl-1 expression. As Mcl-1 is regulated by signal transducers and activators of transcription 3 (STAT3), we found that SC-2001 downregulated the phosphorylation of STAT3 (Tyr 705) and subsequently inhibited transcriptional activities of STAT3 in a dose-dependent manner. In addition to Mcl-1, STAT3-regulated proteins, including survivin and cyclin D1, were also repressed by SC-2001. Notably, SC-2001 reduced IL-6-induced STAT3 activation in HepG2 and PLC5 cells. Ectopic expression of STAT3 abolished the prominent apoptotic death in SC-2001-treated PLC5 cells, indicating that STAT3 is indispensable in mediating the effects of SC-2001. Importantly, SC-2001 enhanced the expression of SHP1, a negative regulator of STAT3. Inhibition of SHP-1 by either specific inhibitor or small interference RNA reduced the apoptotic effects of SC-2001, indicating that SHP-1 plays a key role in mediating SC2001-induced cell death. SC-2001 enhanced the activity of SHP-1 in all tested HCC cells including HepG2, PLC5 and Huh-7. Finally, SC-2001 reduced PLC5 tumor growth, downregulated p-STAT3 and upregulated SHP-1 expression and activity in vivo. In conclusion, our results suggest that SC-2001 induces apoptosis in HCC, and that this effect is mediated through SHP-1-dependent STAT3 inactivation.\nCandidate regulator: STAT3\nCandidate target: MCL1\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "NO_REGULATION",
+        "B": "REGULATION_PRESENT"
+      },
+      "gold_option": "B",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_257",
+      "pmid": "15451063",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Sp3 repression of polymorphic human NRH:quinone oxidoreductase 2 gene promoter.\nAbstract: Human NRH:quinone oxidoreductase 2 (NQO2) gene-containing 29-bp deletion/insertion polymorphic promoters were found to be associated with susceptibility to Parkinson's disease. Here, we demonstrate that the NQO2 gene is differentially expressed by the polymorphic promoters in human fibroblasts and Hep-G2 cells transfected with NQO2 gene reporter constructs. Promoter containing the 29-bp insertion polymorphism demonstrated significantly lower NQO2 gene expression. Deletion mutagenesis and DNase I footprinting analysis of the promoter without the 29-bp insertion identified three protected regions (region A, B, and C). Band- and supershift and transfection assays showed binding of transcription factor Sp1 to regions A and B, which regulated expression of the NQO2 gene. Similar studies of the NQO2 gene promoter with the 29-bp insertion polymorphism showed that regions A and C were identical and contributed similarly as in the promoter without the 29-bp insertion to NQO2 gene expression. However, region B was found to be inserted with 29-bp DNA element and bound to both Sp1 and Sp3. Binding of Sp3 led to repression of NQO2 gene transcription by the promoter containing the 29-bp insertion polymorphism. These studies also suggest that alterations in NQO2 activity might be an important factor in susceptibility to Parkinson's disease.\nCandidate regulator: SP1\nCandidate target: NQO2\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "NO_REGULATION",
+        "B": "REGULATION_PRESENT"
+      },
+      "gold_option": "B",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_275",
+      "pmid": "12560084",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Fluid shear stress-induced transcriptional activation of the vascular endothelial growth factor receptor-2 gene requires Sp1-dependent DNA binding.\nAbstract: Hemodynamic forces play a fundamental role in the regulation of endothelial cell survival. As signaling via the vascular endothelial growth factor (VEGF) receptor-2 pathway has been previously demonstrated to impact endothelial cell survival, we hypothesized that laminar shear stress may facilitate survival in part by inducing VEGF receptor-2 expression. This study shows a time- and dose-dependent upregulation of endothelial VEGF receptor-2 expression by fluid shear stress in microvascular and large-vessel derived endothelial cells. A functional analysis of the 5'-regulatory region of the VEGF receptor-2 promoter localized the shear stress-response element to a sequence between bp -60 and -37 that encompasses two adjacent consensus Sp1 transcription factor binding sites. Constitutive and shear stress-inducible Sp1-dependent complexes are bound to this element, indicating that fluid shear stress-induced transcriptional activation of the VEGF receptor-2 gene requires Sp1-dependent DNA binding. Together, these results suggest that biomechanical stimulation may lead to endothelial cell survival by upregulating VEGF receptor-2 expression.\nCandidate regulator: SP1\nCandidate target: VEGFA\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "REGULATION_PRESENT",
+        "B": "NO_REGULATION"
+      },
+      "gold_option": "B",
+      "gold_label": "NO_REGULATION",
+      "qwen25_7b_prediction": "REGULATION_PRESENT",
+      "qwen25_32b_prediction": "NO_REGULATION"
+    },
+    {
+      "transition": "CORRECT_TO_WRONG",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_280",
+      "pmid": "18199129",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: The association of genetic variants in Krüppel-like factor 11 and Type 2 diabetes in the Japanese population.\nAbstract: Krüppel-like factor 11 (KLF11) is a transcriptional factor of the zinc finger domain family that regulates the expression of insulin. In North European populations, its common functional variant Q62R (rs35927125) is a strong genetic factor for Type 2 diabetes (P = 0.00033, odds ratio for G allele = 1.29, 95% CI 1.12-1.49). We examined the contribution of KLF11 variants to the susceptibility to Type 2 diabetes in a Japanese population. By re-sequencing Japanese individuals (n = 24, partly 96), we screened all four exons, exon/intron boundaries and flanking regions of KLF11. Verified single nucleotide polymorphisms (SNPs) were genotyped in 731 initial samples (369 control and 362 case subjects). Subsequently, we tested for association in 1087 samples (524 control and 563 case subjects), which were collected in different districts of Japan from the initial samples. We identified eight variants, including a novel A/C variant on intron 3, but no mis-sense mutations. In an association study, we failed to find any significant result of SNPs (minor allele frequency 8.2-46.2%) after correcting for multiple testing. Similarly, no haplotypes were associated with Type 2 diabetes. It is notable that the G allele in rs35927125 was completely absent in 1818 Japanese individuals. Genetic variants in KLF11 are unlikely to have a major effect of Type 2 diabetes in the Japanese population, although they were significantly associated in North European populations. These observations might help to determine the role of KLF11 variants in Type 2 diabetes in different populations.\nCandidate regulator: KLF11\nCandidate target: INS\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "NO_REGULATION",
+        "B": "REGULATION_PRESENT"
+      },
+      "gold_option": "B",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "REGULATION_PRESENT",
+      "qwen25_32b_prediction": "NO_REGULATION"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_330",
+      "pmid": "24655378",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: EBV-encoded miR-BART20-5p and miR-BART8 inhibit the IFN-γ-STAT1 pathway associated with disease progression in nasal NK-cell lymphoma.\nAbstract: Nasal NK-cell lymphoma (NNL) is an Epstein-Barr virus (EBV)-associated lymphoma of cytotoxic natural killer (NK) cell origin. Because normal NK cells secrete the principal cytotoxic cytokine IFN-γ to suppress both tumor growth and viral replication, we investigated how EBV may have used miRNAs of viral origin to inhibit the IFN-γ-STAT1 pathway to facilitate viral replication and tumor growth. In EBV(-) Jurkat cells, transfection of miR-BART20-5p and miR-BART8 inhibited translation of luciferase-IFN-γ-3'-UTR and luciferase-STAT1-3'-UTR, respectively. In EBV(+) IFN-γ(weak)/STAT1(strong) YT leukemic cells and IFN-γ(strong)/STAT1(weak) NK92 cells, relative endogenous levels between miR-BART20-5p and IFN-γ mRNAs or between miR-BART8 and STAT1 mRNAs determined expression of the targets. Chromatin immunoprecipitation studies showed that STAT1 regulates the transcription of the tumor suppressor TP53 (encoding p53) and miR-let7a. Consistent with these findings, overexpression of miR-BART8 in YT cells or of miR-BART20-5p in NK92 cells inhibited p53 and increased resistance to doxorubicin. In 36 NNLs, the levels of miR-BART20-5p or miR-BART8 correlated inversely with the expression of STAT1. Additionally, in 46 NNLs, expression of both miR-BART20-5p and miR-BART8 identified a group of NNLs with decreased p53 mRNAs and evidence of disease progression. We conclude that miR-BART20-5p and miR-BART8 cause progression of nasal NK-cell lymphomas through inhibition of the IFN-γ-STAT1 pathway.\nCandidate regulator: STAT1\nCandidate target: TP53\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "NO_REGULATION",
+        "B": "REGULATION_PRESENT"
+      },
+      "gold_option": "B",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "CORRECT_TO_WRONG",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_332",
+      "pmid": "11532945",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: The FK506-binding protein 25 functionally associates with histone deacetylases and with transcription factor YY1.\nAbstract: FK506-binding proteins (FKBPs) are cellular receptors for immunosuppressants that belong to a subgroup of proteins, known as immunophilins, with peptidylprolyl cis-trans isomerase (PPIase) activity. Sequence comparison suggested that the HD2-type histone deacetylases and the FKBP-type PPIases may have evolved from a common ancestor enzyme. Here we show that FKBP25 physically associates with the histone deacetylases HDAC1 and HDAC2 and with the HDAC-binding transcriptional regulator YY1. An FKBP25 immunoprecipitated complex contains deacetylase activity, and this activity is associated with the N-terminus of FKBP25, distinct from the FK506/rapamycin-binding domain. Furthermore, FKBP25 can alter the DNA-binding activity of YY1. Together, our data firmly establish a relationship between histone deacetylases and the FKBP enzymes and provide a novel and critical function for the FKBPs.\nCandidate regulator: YY1\nCandidate target: HDAC2\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "REGULATION_PRESENT",
+        "B": "NO_REGULATION"
+      },
+      "gold_option": "B",
+      "gold_label": "NO_REGULATION",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_349",
+      "pmid": "23569208",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Repression of myoblast proliferation and fibroblast growth factor receptor 1 promoter activity by KLF10 protein.\nAbstract: FGFR1 gene expression regulates myoblast proliferation and differentiation, and its expression is controlled by Krüppel-like transcription factors. KLF10 interacts with the FGFR1 promoter, repressing its activity and cell proliferation. KLF10 represses FGFR1 promoter activity and thereby myoblast proliferation. A model of transcriptional control of chicken FGFR1 gene regulation during myogenesis is presented. Skeletal muscle development is controlled by regulation of myoblast proliferation and differentiation into muscle fibers. Growth factors such as fibroblast growth factors (FGFs) and their receptors (FGFRs) regulate cell proliferation and differentiation in numerous tissues, including skeletal muscle. Transcriptional regulation of FGFR1 gene expression is developmentally regulated by the Sp1 transcription factor, a member of the Krüppel-like factor (KLF) family of transcriptional regulators. Here, we show that another KLF transcription factor, KLF10, also regulates myoblast proliferation and FGFR1 promoter activity. Expression of KLF10 reduced myoblast proliferation by 86%. KLF10 expression also significantly reduced FGFR1 promoter activity in myoblasts and Sp1-mediated FGFR1 promoter activity in Drosophila SL2 cells. Southwestern blot, electromobility shift, and chromatin immunoprecipitation assays demonstrated that KLF10 bound to the proximal Sp factor binding site of the FGFR1 promoter and reduced Sp1 complex formation with the FGFR1 promoter at that site. These results indicate that KLF10 is an effective repressor of myoblast proliferation and represses FGFR1 promoter activity in these cells via an Sp1 binding site.\nCandidate regulator: SP1\nCandidate target: FGFR1\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "REGULATION_PRESENT",
+        "B": "NO_REGULATION"
+      },
+      "gold_option": "A",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_365",
+      "pmid": "9651398",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: The gut-enriched Krüppel-like factor suppresses the activity of the CYP1A1 promoter in an Sp1-dependent fashion.\nAbstract: The gut-enriched Krüppel-like factor (GKLF) is a newly identified zinc finger-containing transcription factor. Recent studies indicate that GKLF binds to a core DNA sequence of 5'-(G/A)(G/A)GG(C/T)G(C/T)-3', which is found in an endogenous cis element, the basic transcription element (BTE) of the cytochrome P-450IA1 (CYP1A1) promoter. The present study characterizes the ability of GKLF to regulate CYP1A1 expression. By electrophoretic mobility gel shift assay (EMSA) and methylation interference assay, GKLF was found to bind BTE in a manner similar to several other transcription factors known to interact with BTE including Sp1 and BTEB. Cotransfection studies in Chinese hamster ovary cells showed that GKLF inhibited the CYP1A1 promoter in a dose- and BTE-dependent manner. The same experiments also revealed that BTE was responsible for a significant portion of the CYP1A1 promoter activity. EMSA of nuclear extracts from Chinese hamster ovary cells showed that Sp1 and Sp3 were two major proteins that interacted with BTE. Additional cotransfection studies showed that GKLF inhibited Sp1-mediated activation of the CYP1A1 promoter. In contrast, GKLF enhanced Sp3-dependent suppression of the same promoter. Moreover, the ability of GKLF to inhibit Sp1-dependent transactivation was in part due to physical interaction of the two proteins. These findings indicate that GKLF is a negative regulator of the CYP1A1 promoter in a BTE-dependent fashion and that this inhibitory effect is in part mediated by physical interaction with Sp1.\nCandidate regulator: KLF4\nCandidate target: CYP1A1\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "REGULATION_PRESENT",
+        "B": "NO_REGULATION"
+      },
+      "gold_option": "A",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_387",
+      "pmid": "24220291",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Identification of KLF17 as a novel epithelial to mesenchymal transition inducer via direct activation of TWIST1 in endometrioid endometrial cancer.\nAbstract: Krüppel-like factor 17 (KLF17), a member of the KLF transcription factor family, has been shown to inhibit the epithelial-mesenchymal transition (EMT) and tumor growth. However, the expression, the cellular function and the mechanism of KLF17 in endometrioid endometrial cancer (EEC; a dominant type of endometrial cancer) remain elusive. Here, we report that among the KLF family members, KLF17 was consistently upregulated in EEC cell lines compared with immortalized endometrial epithelial cells. Overexpression of KLF17 in EEC cell lines induced EMT and promoted cell invasion and drug resistance, resulting in increased expression of TWIST1. In contrast, KLF17 suppression reversed EMT, diminished cell invasion, restored drug sensitivity and suppressed TWIST1 expression. Luciferase assays, site-directed mutagenesis and transcription factor DNA-binding analysis demonstrated that KLF17 transactivates TWIST1 expression by directly binding to the TWIST1 promoter. Knockdown of TWIST1 prevented KLF17-induced EMT. Consistent with these results, both KLF17 and TWIST1 levels were found to be elevated in EECs compared with normal tissues. KLF17 expression positively correlated with tumor grade but inversely correlated with estrogen and progesterone receptor expression. Thus, KLF17 may have an oncogenic role during EEC progression via initiating EMT through the regulation of TWIST1.\nCandidate regulator: TWIST1\nCandidate target: KLF17\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "NO_REGULATION",
+        "B": "REGULATION_PRESENT"
+      },
+      "gold_option": "A",
+      "gold_label": "NO_REGULATION",
+      "qwen25_7b_prediction": "REGULATION_PRESENT",
+      "qwen25_32b_prediction": "NO_REGULATION"
+    },
+    {
+      "transition": "WRONG_TO_CORRECT",
+      "benchmark_id": "human_heldout_strict_l0_l1_benchmark_v1_20260901:human_heldout_l0_l1_benchmark_v1_20260901_397",
+      "pmid": "16007214",
+      "task": "UNKNOWN_RELATION_PRESENCE",
+      "question": "You are evaluating one biomedical abstract. Use the abstract as the only evidence.\nDo not use external knowledge or infer a relation not stated in the text.\nTitle: Targeting Stat3 blocks both HIF-1 and VEGF expression induced by multiple oncogenic growth signaling pathways.\nAbstract: Vascular endothelial growth factor (VEGF) upregulation is induced by many receptor and intracellular oncogenic proteins commonly activated in cancer, rendering molecular targeting of VEGF expression a complex challenge. While VEGF inducers abound, only two major transcription activators have been identified for its promoter: hypoxia inducible factor-1 (HIF-1) and signal transducer and activator of transcription (Stat3). Both HIF-1 expression and Stat3 activity are upregulated in diverse cancers. Here, we provide evidence that Stat3 is required for both basal and growth signal-induced expression of HIF-1. Moreover, induction of VEGF by diverse oncogenic growth stimuli, including IL-6R, c-Src, Her2/Neu, is attenuated in cells without Stat3 signaling. We further demonstrate that Stat3 regulates expression of Akt, which is required for growth signal-induced HIF-1 upregulation. Targeting Stat3 with a small-molecule inhibitor blocks HIF-1 and VEGF expression in vitro and inhibits tumor growth and angiogenesis in vivo. Furthermore, tumor cells' in vivo angiogenic capacity induced by IL-6R, which simultaneously activates Jak/STAT and PI3K/Akt pathways, is abrogated when Stat3 is inhibited. Activation of Stat3 signaling by various growth signaling is prevalent in diverse cancers. Results presented here demonstrate that Stat3 is an effective target for inhibiting tumor VEGF expression and angiogenesis.\nCandidate regulator: STAT3\nCandidate target: AKT1\nBased only on the title and abstract, is a transcriptional regulatory relationship directly supported for the specified regulator-target pair?\nChoose exactly one option letter.",
+      "options": {
+        "A": "REGULATION_PRESENT",
+        "B": "NO_REGULATION"
+      },
+      "gold_option": "A",
+      "gold_label": "REGULATION_PRESENT",
+      "qwen25_7b_prediction": "NO_REGULATION",
+      "qwen25_32b_prediction": "REGULATION_PRESENT"
+    }
+  ]
+}

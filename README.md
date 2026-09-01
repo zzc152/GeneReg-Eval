@@ -1,44 +1,124 @@
 # GeneReg-Eval
 
-GeneReg-Eval 是一个面向生命科学语言模型的**基因调控关系抽取与证据推理**项目。
+GeneReg-Eval is an evidence-grounded benchmark for assessing whether language
+models can read a PubMed title and abstract and make a narrowly defined gene
+regulation judgment. It separates a curated TRRUST candidate relation, the
+abstract text, model output, and human adjudication; these are never treated as
+interchangeable facts.
 
-它以 TRRUST 的人工整理关系为外部关系参考，以关联 PMID 的 PubMed 摘要为独立证据来源，评测模型能否从文献中抽取并解释受证据约束的调控关系。
+## Released benchmark: Human strict L0 v1
 
-## 核心问题
+`human_strict_l0_v1_20260901` is a frozen, independently reviewed Human
+held-out benchmark of **267 distinct PMID-linked abstracts**. The model sees
+only the title, abstract, and candidate regulator/target query. It never sees
+the TRRUST mode of regulation or the human label.
 
-> 显式、可核查的文献证据推理监督，能否让较小模型从实验观察中推导基因调控关系，而非只记忆关系表？
+| Task | Question | Labels | Items |
+|---|---|---|---:|
+| `KNOWN_DIRECTION` | What direction is supported for this pair? | `Activation`, `Repression` | 171 |
+| `UNKNOWN_RELATION_PRESENCE` | Is a transcriptional regulatory relationship supported? | `REGULATION_PRESENT`, `NO_REGULATION` | 96 |
 
-## 资源与任务
+The benchmark deliberately excludes `ABSTRACT_PARTIAL`, unresolved, and
+unreviewed records rather than relabelling them as negatives. There are 248
+records with complete Level-1 evidence annotations, but the current public L0
+score uses all 267 strict records.
 
-| 资源 / 任务 | 状态 |
-|---|---|
-| TRRUST human PMID 对齐与 PubMed 摘要下载 | 已在前序项目完成 |
-| 100 篇 TRRUST-human 摘要开发集与人工辅助 gold | 已完成，**仅限开发用途** |
-| 基于摘要的证据约束关系抽取 | 已有可迁移 prompt / parser / validator 原型 |
-| GeneReg-SFT 训练集 | 待构建 |
-| GeneReg-Eval Level 1 / 2 benchmark | 待构建 |
-| Mouse 摘要对齐与 Human→Mouse 泛化集 | 待构建 |
-| 跨文献 Level 3 | 后续扩展，不是当前 MVP |
+The release is under
+[`data/benchmarks/human_strict_l0_v1_20260901`](data/benchmarks/human_strict_l0_v1_20260901).
+It contains frozen source reviews, strict records, OpenCompass-ready MCQ files,
+and result summaries. See its [release notes](data/benchmarks/human_strict_l0_v1_20260901/README.md)
+for provenance and checksums.
 
-## 三个评测层级
+## Baseline result
 
-- **Level 1：关系抽取**：从摘要抽取 regulator、object、Activation / Repression / Unknown、证据及条件。
-- **Level 2：证据推理**：将实验观察映射为简短、可核查的 inference rules；包括实体去标识化测试。
-- **Level 3：跨文献推理**：少量 A→B→C 路径、上下文一致性与证据不足拒答。该层级延后。
+Both models answered the exact same 267 questions with deterministic decoding.
 
-## 最重要的边界
+| Model | Overall | Direction | Relation presence |
+|---|---:|---:|---:|
+| Qwen2.5-7B-Instruct | 79.40% (212/267) | 81.29% (139/171) | 76.04% (73/96) |
+| Qwen2.5-32B-AWQ | **90.26% (241/267)** | **91.23% (156/171)** | **88.54% (85/96)** |
 
-1. **TRRUST relation gold 不等于摘要支持 gold。** TRRUST 指出候选关系和 PMID；是否被该摘要独立支持必须另行标注。
-2. 不训练或评测“普适生物学真理”；每条记录只主张其 evidence spans 明确支持的内容与条件。
-3. 调控对象可为基因、promoter、enhancer、motif、binding site 或蛋白。不得把 `X promoter` 静默缩写为裸 `X`。
-4. 结构化 reasoning 是可审计的 observation 与 rule，不收集冗长自由式思维链。
+The paired comparison has 33 `7B wrong -> 32B correct` transitions and 4
+`7B correct -> 32B wrong` transitions: a net improvement of **29/267 = 10.86
+percentage points**. Exact two-sided McNemar: `p = 1.08e-6`; paired bootstrap
+(20,000 resamples) 95% CI for the 32B-minus-7B difference: **+6.74 to +15.36
+percentage points**. These results compare different model sizes *and*
+quantization variants; they do not isolate scale as the sole causal factor.
 
-详细设计见 [docs/architecture.md](docs/architecture.md)、[docs/evaluation_protocol.md](docs/evaluation_protocol.md)。
+## Reproduce the benchmark materialization
 
-## 当前优先顺序
+All project execution is designed for the configured remote Linux server. The
+scripts themselves are path-portable: set `GENEREG_EVAL_ROOT` when the checkout
+is not the current working directory. Commands below are illustrative; they do
+not download models or start vLLM.
 
-1. 冻结并迁移 human 开发集；建立独立的 held-out test 集。
-2. 构建 `ABSTRACT_SUPPORTED` 筛选与最小证据标注流程。
-3. 先完成 Level 1 baseline 与 prompt 改进，再生成 Level 2 SFT 数据。
-4. 最后做 Human→Mouse 和 Level 3。
+```bash
+export GENEREG_EVAL_ROOT=/workspace/zzc/GeneReg-Eval
+cd "$GENEREG_EVAL_ROOT"
+PYTHON=/workspace/zzc/envs/project_800/bin/python
 
+# Rebuild strict labels from the frozen reviewed and resolution sources.
+# Use new output names; the release artifacts are immutable.
+$PYTHON scripts/review/build_human_heldout_strict_benchmark_v1.py \
+  --reviewed data/benchmarks/human_strict_l0_v1_20260901/sources/reviewed_source.json \
+  --resolved data/benchmarks/human_strict_l0_v1_20260901/sources/uncertain_resolved_source.json \
+  --merged-output data/intermediate/example_merged.jsonl \
+  --benchmark-output data/intermediate/example_strict.jsonl \
+  --stats-output data/intermediate/example_stats.json
+
+# Materialize deterministic OpenCompass questions from the rebuilt strict file.
+$PYTHON scripts/review/build_opencompass_human_strict_l0_v1.py \
+  --strict data/intermediate/example_strict.jsonl \
+  --frozen-source data/benchmarks/human_strict_l0_v1_20260901/sources/article_records.jsonl \
+  --output-dir data/intermediate/example_opencompass_l0
+```
+
+The benchmark generator deterministically counterbalances A/B option positions
+per item.
+
+OpenCompass configurations are in [`configs/opencompass`](configs/opencompass).
+The 32B AWQ evaluation uses vLLM, while the 7B configuration uses the local
+Hugging Face backend. Evaluate with OpenCompass in its own environment; exact
+server-specific model paths are intentionally supplied through configuration or
+environment rather than assumed by the data release.
+
+## Analysis and reporting
+
+- [`scripts/analysis/summarize_opencompass_l0_v1.py`](scripts/analysis/summarize_opencompass_l0_v1.py): label-level summaries.
+- [`scripts/analysis/compare_opencompass_l0_paired_v1.py`](scripts/analysis/compare_opencompass_l0_paired_v1.py): paired transitions, exact McNemar, and paired bootstrap CI.
+- [`docs/evaluation_protocol.md`](docs/evaluation_protocol.md): split, leakage, and metric rules.
+- [`docs/evidence_error_taxonomy_v1.md`](docs/evidence_error_taxonomy_v1.md): evidence-grounding failure taxonomy.
+- [`docs/phase3_gold_adjudication_spec_v1.md`](docs/phase3_gold_adjudication_spec_v1.md): human adjudication policy.
+
+The paired-analysis release includes the 37 disagreement cases with full
+question text, labels, and both predictions, enabling qualitative error
+analysis without reconstructing model output.
+
+## Scope and limitations
+
+- This release is Human / abstract-only / Level-0 classification. It is not a
+  full-text benchmark and does not establish biological truth beyond the
+  abstract evidence policy.
+- The 100-abstract development set that informed prompts and validators is not
+  used for this held-out score.
+- `NO_REGULATION` has only 16 items; its 32B recall estimate should be treated
+  cautiously.
+- Mouse alignment, Human-to-Mouse transfer, Level-2 reasoning evaluation, and
+  Level-3 cross-document reasoning remain future work.
+
+## Repository layout
+
+```text
+data/benchmarks/    frozen public benchmark releases
+schemas/            record, SFT, and teacher-reasoning contracts
+scripts/review/     audit ingestion, benchmark construction, validators
+scripts/analysis/   metric and paired-comparison utilities
+configs/opencompass/ evaluation configurations
+docs/               protocol, architecture, adjudication, taxonomy
+```
+
+## Citation
+
+This is an early benchmark release. If you use it, cite the repository commit
+and benchmark version `human_strict_l0_v1_20260901`; also cite TRRUST and the
+underlying PubMed records identified by the released PMIDs.

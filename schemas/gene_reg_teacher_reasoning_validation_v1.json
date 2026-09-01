@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://genereg-eval/schemas/gene_reg_teacher_reasoning_validation_v1.json",
+  "title": "GeneReg-Eval teacher reasoning validation sidecar v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "reasoning_id", "validation_route", "checks", "validator_metadata"],
+  "properties": {
+    "schema_version": {"const": "gene_reg_teacher_reasoning_validation_v1"},
+    "reasoning_id": {"type": "string", "pattern": "^grtr-v1:[^\\s]+$"},
+    "validation_route": {"enum": ["VALID", "REVIEW", "REJECT"]},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_valid",
+        "source_hash_match",
+        "evidence_spans_in_abstract",
+        "observation_evidence_links_valid",
+        "rule_ids_known",
+        "rule_catalog_version_match",
+        "rule_observation_compatibility",
+        "primary_rule_is_most_specific",
+        "teacher_assessment_consistent",
+        "final_relation_matches_upstream",
+        "upstream_disagreement_routed_to_review",
+        "entity_mentions_anchored",
+        "relation_condition_anchored"
+      ],
+      "properties": {
+        "schema_valid": {"type": "boolean"},
+        "source_hash_match": {"type": "boolean"},
+        "evidence_spans_in_abstract": {"type": "boolean"},
+        "observation_evidence_links_valid": {"type": "boolean"},
+        "rule_ids_known": {"type": "boolean"},
+        "rule_catalog_version_match": {"type": "boolean"},
+        "rule_observation_compatibility": {"type": "boolean"},
+        "primary_rule_is_most_specific": {"type": "boolean"},
+        "teacher_assessment_consistent": {"type": "boolean"},
+        "final_relation_matches_upstream": {"type": "boolean"},
+        "upstream_disagreement_routed_to_review": {"type": "boolean"},
+        "entity_mentions_anchored": {"type": "boolean"},
+        "relation_condition_anchored": {"type": "boolean"}
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "severity", "message"],
+        "properties": {
+          "code": {"type": "string", "pattern": "^TRV-[0-9]{3}$"},
+          "severity": {"enum": ["REJECT", "REVIEW"]},
+          "message": {"type": "string", "minLength": 1, "maxLength": 500}
+        }
+      }
+    },
+    "validator_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["validator_version", "validated_at_utc"],
+      "properties": {
+        "validator_version": {"type": "string", "minLength": 1},
+        "validated_at_utc": {"type": "string", "format": "date-time"}
+      }
+    }
+  }
+}

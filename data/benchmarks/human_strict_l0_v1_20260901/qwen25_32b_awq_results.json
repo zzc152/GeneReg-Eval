@@ -1,0 +1,74 @@
+{
+  "metric_version": "opencompass_strict_l0_summary_v1",
+  "overall_micro": {
+    "total": 267,
+    "correct": 241,
+    "accuracy": 0.9026217228464419
+  },
+  "tasks": {
+    "known_direction": {
+      "dataset": "data/benchmarks/opencompass_human_strict_l0_v1_20260901/human_strict_l0_direction.jsonl",
+      "result": "outputs/opencompass/qwen25_32b_awq_vllm_single_gpu_human_strict_l0_full_v1_20260901/20260901_150250/results/qwen2_5_32b_awq_vllm_human_strict_l0_v1/human_strict_l0_direction_v1.json",
+      "total": 171,
+      "correct": 156,
+      "accuracy": 0.9122807017543859,
+      "invalid_option_predictions": 0,
+      "per_label": {
+        "Activation": {
+          "support": 91,
+          "correct": 78,
+          "recall": 0.8571428571428571,
+          "precision": 0.975
+        },
+        "Repression": {
+          "support": 80,
+          "correct": 78,
+          "recall": 0.975,
+          "precision": 0.8571428571428571
+        }
+      },
+      "confusion": {
+        "Activation": {
+          "Activation": 78,
+          "Repression": 13
+        },
+        "Repression": {
+          "Repression": 78,
+          "Activation": 2
+        }
+      }
+    },
+    "unknown_relation_presence": {
+      "dataset": "data/benchmarks/opencompass_human_strict_l0_v1_20260901/human_strict_l0_presence.jsonl",
+      "result": "outputs/opencompass/qwen25_32b_awq_vllm_single_gpu_human_strict_l0_full_v1_20260901/20260901_150250/results/qwen2_5_32b_awq_vllm_human_strict_l0_v1/human_strict_l0_presence_v1.json",
+      "total": 96,
+      "correct": 85,
+      "accuracy": 0.8854166666666666,
+      "invalid_option_predictions": 0,
+      "per_label": {
+        "NO_REGULATION": {
+          "support": 16,
+          "correct": 12,
+          "recall": 0.75,
+          "precision": 0.631578947368421
+        },
+        "REGULATION_PRESENT": {
+          "support": 80,
+          "correct": 73,
+          "recall": 0.9125,
+          "precision": 0.948051948051948
+        }
+      },
+      "confusion": {
+        "NO_REGULATION": {
+          "NO_REGULATION": 12,
+          "REGULATION_PRESENT": 4
+        },
+        "REGULATION_PRESENT": {
+          "REGULATION_PRESENT": 73,
+          "NO_REGULATION": 7
+        }
+      }
+    }
+  }
+}

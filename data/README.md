@@ -1,6 +1,11 @@
 # Data layout and provenance
 
-Large source data is not copied into this scaffold. The first migration task is to create versioned manifests pointing to immutable source files in the predecessor repository or remote storage.
+The public, frozen Human strict-L0 benchmark is released under
+[`benchmarks/human_strict_l0_v1_20260901`](benchmarks/human_strict_l0_v1_20260901).
+It includes the review provenance, strict records, OpenCompass materialization,
+and baseline result summaries. Large upstream TRRUST and PubMed collections are
+not duplicated outside this benchmark release; retain versioned manifests when
+adding them.
 
 ```text
 data/
@@ -23,4 +28,3 @@ data/
 | 100-abstract extraction output | `data/processed/trrust_human_blind_extractions_100_v1_20260823.jsonl` | Blind model output |
 
 Before copying, record SHA-256 and source revision in a manifest. Do not accidentally train on a held-out evaluation PMID.
-

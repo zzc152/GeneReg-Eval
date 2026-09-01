@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://genereg-eval/schemas/gene_reg_teacher_reasoning_v1.json",
+  "title": "GeneReg-Eval teacher-generated structured reasoning source v1",
+  "description": "Immutable teacher output for an upstream ABSTRACT_SUPPORTED relation. This is bounded supervision, not a free-form chain-of-thought. A teacher may flag an upstream error for review but may not silently rewrite it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "reasoning_id",
+    "source",
+    "inference_rule_catalog_version",
+    "evidence",
+    "observations",
+    "rule_applications",
+    "teacher_assessment",
+    "final_relation",
+    "teacher_metadata"
+  ],
+  "properties": {
+    "schema_version": {"const": "gene_reg_teacher_reasoning_v1"},
+    "reasoning_id": {"type": "string", "pattern": "^grtr-v1:[^\\s]+$"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_record_key",
+        "pmid",
+        "species",
+        "title_sha256",
+        "abstract_sha256",
+        "upstream_admission",
+        "upstream_relation",
+        "upstream_support_span"
+      ],
+      "properties": {
+        "source_record_key": {"type": "string", "minLength": 1},
+        "pmid": {"type": "string", "pattern": "^[0-9]+$"},
+        "species": {"enum": ["human", "mouse"]},
+        "title_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "abstract_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "upstream_admission": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["first_pass_status", "first_validator_route", "second_pass_decision", "second_validator_route"],
+          "properties": {
+            "first_pass_status": {"const": "ABSTRACT_SUPPORTED"},
+            "first_validator_route": {"const": "VALID"},
+            "second_pass_decision": {"const": "PASS"},
+            "second_validator_route": {"const": "VALID"}
+          }
+        },
+        "upstream_relation": {"$ref": "#/$defs/upstreamRelation"},
+        "upstream_support_span": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The upstream admission span, supplied to the teacher only as a reference. Teacher evidence need not equal, copy, or be contained in this span."
+        }
+      }
+    },
+    "inference_rule_catalog_version": {"const": "gene_reg_inference_rule_catalog_v1"},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/observation"}
+    },
+    "rule_applications": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/ruleApplication"}
+    },
+    "teacher_assessment": {"$ref": "#/$defs/teacherAssessment"},
+    "final_relation": {
+      "anyOf": [
+        {"$ref": "#/$defs/finalRelation"},
+        {"type": "null"}
+      ],
+      "description": "Present only when the teacher agrees with the upstream relation. It is null when the teacher raises an upstream-error review flag."
+    },
+    "teacher_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_id", "prompt_version", "generated_at_utc"],
+      "properties": {
+        "model_id": {"type": "string", "minLength": 1},
+        "prompt_version": {"type": "string", "minLength": 1},
+        "generated_at_utc": {"type": "string", "format": "date-time"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"teacher_assessment": {"properties": {"status": {"const": "AGREES_UPSTREAM"}}, "required": ["status"]}}},
+      "then": {"properties": {"final_relation": {"$ref": "#/$defs/finalRelation"}}}
+    },
+    {
+      "if": {"properties": {"teacher_assessment": {"properties": {"status": {"const": "UPSTREAM_ERROR_SUSPECTED"}}, "required": ["status"]}}},
+      "then": {"properties": {"final_relation": {"type": "null"}}}
+    }
+  ],
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{0,47}$"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "verbatim_span", "role"],
+      "properties": {
+        "evidence_id": {"$ref": "#/$defs/identifier"},
+        "verbatim_span": {"type": "string", "minLength": 1, "maxLength": 4000, "description": "A literal source span selected because it is needed for the observation/rule chain. It may differ from the upstream minimal support span and may add another needed source sentence."},
+        "role": {"enum": ["functional", "mechanistic", "context"]}
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observation_id", "evidence_ids", "observation_type", "statement", "assertion_provenance"],
+      "properties": {
+        "observation_id": {"$ref": "#/$defs/identifier"},
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/identifier"},
+          "uniqueItems": true
+        },
+        "observation_type": {
+          "enum": [
+            "EXPLICIT_TRANSCRIPTION_STATEMENT",
+            "AUTHORIAL_RELATION_ASSERTION",
+            "TF_PERTURBATION_TARGET_CHANGE",
+            "PROMOTER_OR_REPORTER_ACTIVITY",
+            "BINDING_OR_OCCUPANCY",
+            "BINDING_SITE_FUNCTION",
+            "TARGET_TRANSCRIPT_OR_EXPRESSION_CHANGE",
+            "COMPLEX_COMPONENT_FUNCTION",
+            "OTHER_FUNCTIONAL_OBSERVATION"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 700,
+          "description": "A concise evidence-grounded observation. It may describe an experiment or an explicit authorial relation assertion, but may not add an unstated mechanism or outside knowledge."
+        },
+        "assertion_provenance": {
+          "enum": [null, "CURRENT_STUDY_RESULT", "PRIOR_WORK_ASSERTION", "BACKGROUND_ASSERTION"],
+          "description": "Required for AUTHORIAL_RELATION_ASSERTION; otherwise null. It states where the explicit relation claim is presented, not whether it is biologically true."
+        }
+      }
+    },
+    "ruleApplication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["application_id", "rule_id", "observation_ids", "conclusion"],
+      "properties": {
+        "application_id": {"$ref": "#/$defs/identifier"},
+        "rule_id": {
+          "enum": [
+            "GRR-001_EXPLICIT_TRANSCRIPTIONAL_RELATION_ASSERTION",
+            "GRR-002_TF_LOSS_TARGET_DECREASE_IMPLIES_ACTIVATION",
+            "GRR-003_TF_LOSS_TARGET_INCREASE_IMPLIES_REPRESSION",
+            "GRR-004_TF_GAIN_TARGET_INCREASE_IMPLIES_ACTIVATION",
+            "GRR-005_TF_GAIN_TARGET_DECREASE_IMPLIES_REPRESSION",
+            "GRR-006_PROMOTER_OR_REPORTER_FUNCTION",
+            "GRR-007_BINDING_PLUS_FUNCTIONAL_CONSEQUENCE",
+            "GRR-008_FUNCTIONAL_BINDING_SITE_MUTATION",
+            "GRR-009_NAMED_COMPLEX_COMPONENT_WITH_FUNCTIONAL_OUTPUT",
+            "GRR-010_FUNCTIONAL_RELATION_DIRECTION_UNSPECIFIED"
+          ]
+        },
+        "observation_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/identifier"},
+          "uniqueItems": true
+        },
+        "conclusion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["relation"],
+          "properties": {
+            "relation": {"enum": ["Activation", "Repression", "Unknown"]},
+            "scope_note": {
+              "type": "string",
+              "maxLength": 320,
+              "description": "Optional concise scope limit stated in the linked evidence; not a new inference."
+            }
+          }
+        }
+      }
+    },
+    "upstreamRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["regulator_mention", "relation", "object_mention", "object_kind"],
+      "properties": {
+        "regulator_mention": {"type": "string", "minLength": 1},
+        "relation": {"enum": ["Activation", "Repression", "Unknown"]},
+        "object_mention": {"type": "string", "minLength": 1},
+        "object_kind": {"enum": ["gene", "regulatory_element", "protein", "other"]}
+      }
+    },
+    "conditionEntries": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "evidence_ids"],
+        "properties": {
+          "text": {"type": "string", "minLength": 1, "description": "A literal source substring; do not normalize or infer."},
+          "evidence_ids": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/identifier"}, "uniqueItems": true}
+        }
+      },
+      "description": "All values explicitly stated in the source that constrain where, when, or under what non-evidentiary setting this relation holds. Empty is valid."
+    },
+    "relationCondition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["species", "biological_system", "biological_state", "treatment_or_stimulus", "time", "other_condition"],
+      "properties": {
+        "species": {"$ref": "#/$defs/conditionEntries"},
+        "biological_system": {"$ref": "#/$defs/conditionEntries"},
+        "biological_state": {"$ref": "#/$defs/conditionEntries"},
+        "treatment_or_stimulus": {"$ref": "#/$defs/conditionEntries"},
+        "time": {"$ref": "#/$defs/conditionEntries"},
+        "other_condition": {"$ref": "#/$defs/conditionEntries"}
+      },
+      "description": "Condition means only information that directly constrains where, when, or under what setting this relation holds. It is independent of the inference rule. Every entry must be explicit in the source and linked to evidence. Do not include TF/Target knockdown, overexpression, mutation, or another causal manipulation merely because it was used to prove the relation. All six arrays may be empty."
+    },
+    "teacherAssessment": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "review_reason", "challenge_evidence_ids"],
+          "properties": {
+            "status": {"const": "AGREES_UPSTREAM"},
+            "review_reason": {"type": "null"},
+            "challenge_evidence_ids": {"type": "array", "maxItems": 0}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "review_reason", "challenge_evidence_ids"],
+          "properties": {
+            "status": {"const": "UPSTREAM_ERROR_SUSPECTED"},
+            "review_reason": {"type": "string", "minLength": 1, "maxLength": 500, "description": "A concise evidence-grounded reason for human review; it must not propose a replacement relation."},
+            "challenge_evidence_ids": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/identifier"}, "uniqueItems": true}
+          }
+        }
+      ]
+    },
+    "finalRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_status",
+        "regulator_mention",
+        "relation",
+        "object_mention",
+        "object_kind",
+        "evidence_ids",
+        "rule_application_ids",
+        "primary_rule_application_id",
+        "relation_condition"
+      ],
+      "properties": {
+        "support_status": {"const": "ABSTRACT_SUPPORTED"},
+        "regulator_mention": {"type": "string", "minLength": 1},
+        "relation": {"enum": ["Activation", "Repression", "Unknown"]},
+        "object_mention": {"type": "string", "minLength": 1},
+        "object_kind": {"enum": ["gene", "regulatory_element", "protein", "other"]},
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/identifier"},
+          "uniqueItems": true
+        },
+        "rule_application_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/identifier"},
+          "uniqueItems": true
+        },
+        "primary_rule_application_id": {"$ref": "#/$defs/identifier", "description": "The most specific applicable rule application supporting the final relation."},
+        "relation_condition": {"$ref": "#/$defs/relationCondition"}
+      }
+    }
+  }
+}

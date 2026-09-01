@@ -1,0 +1,74 @@
+{
+  "metric_version": "opencompass_strict_l0_summary_v1",
+  "overall_micro": {
+    "total": 267,
+    "correct": 212,
+    "accuracy": 0.7940074906367042
+  },
+  "tasks": {
+    "known_direction": {
+      "dataset": "data/benchmarks/opencompass_human_strict_l0_v1_20260901/human_strict_l0_direction.jsonl",
+      "result": "outputs/opencompass/qwen25_7b_human_strict_l0_full_v1_20260901/20260901_114109/results/qwen2_5_7b_instruct_human_strict_l0_v1/human_strict_l0_direction_v1.json",
+      "total": 171,
+      "correct": 139,
+      "accuracy": 0.8128654970760234,
+      "invalid_option_predictions": 0,
+      "per_label": {
+        "Activation": {
+          "support": 91,
+          "correct": 70,
+          "recall": 0.7692307692307693,
+          "precision": 0.8641975308641975
+        },
+        "Repression": {
+          "support": 80,
+          "correct": 69,
+          "recall": 0.8625,
+          "precision": 0.7666666666666667
+        }
+      },
+      "confusion": {
+        "Activation": {
+          "Activation": 70,
+          "Repression": 21
+        },
+        "Repression": {
+          "Repression": 69,
+          "Activation": 11
+        }
+      }
+    },
+    "unknown_relation_presence": {
+      "dataset": "data/benchmarks/opencompass_human_strict_l0_v1_20260901/human_strict_l0_presence.jsonl",
+      "result": "outputs/opencompass/qwen25_7b_human_strict_l0_full_v1_20260901/20260901_114109/results/qwen2_5_7b_instruct_human_strict_l0_v1/human_strict_l0_presence_v1.json",
+      "total": 96,
+      "correct": 73,
+      "accuracy": 0.7604166666666666,
+      "invalid_option_predictions": 0,
+      "per_label": {
+        "NO_REGULATION": {
+          "support": 16,
+          "correct": 9,
+          "recall": 0.5625,
+          "precision": 0.36
+        },
+        "REGULATION_PRESENT": {
+          "support": 80,
+          "correct": 64,
+          "recall": 0.8,
+          "precision": 0.9014084507042254
+        }
+      },
+      "confusion": {
+        "NO_REGULATION": {
+          "NO_REGULATION": 9,
+          "REGULATION_PRESENT": 7
+        },
+        "REGULATION_PRESENT": {
+          "REGULATION_PRESENT": 64,
+          "NO_REGULATION": 16
+        }
+      }
+    }
+  }
+}
