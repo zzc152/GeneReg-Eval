@@ -1,5 +1,7 @@
 # GeneReg-Eval
 
+> 中文说明请见 [README.zh-CN.md](README.zh-CN.md)。
+
 GeneReg-Eval is an evidence-grounded benchmark for assessing whether language
 models can read a PubMed title and abstract and make a narrowly defined gene
 regulation judgment. It separates a curated TRRUST candidate relation, the
