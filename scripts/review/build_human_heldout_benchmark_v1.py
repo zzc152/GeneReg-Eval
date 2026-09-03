@@ -12,13 +12,14 @@ import argparse
 import hashlib
 import html
 import json
+import os
 import random
 from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
 
 
-ROOT = Path("/workspace/zzc/GeneReg-Eval")
+ROOT = Path(os.environ.get("GENEREG_EVAL_ROOT", Path(__file__).resolve().parents[2]))
 VERSION = "human_heldout_l0_l1_benchmark_v1_20260901"
 SOURCE_CANDIDATES = "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl"
 SOURCE_ARTICLES = "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl"
@@ -75,23 +76,21 @@ def workflow_exclusions() -> tuple[set[str], list[dict[str, Any]]]:
     """Return prior-workflow PMIDs and a frozen inventory of the scanned files."""
     excluded: set[str] = set()
     inventory: list[dict[str, Any]] = []
-    for base in (ROOT / "data/intermediate", ROOT / "reports"):
+    for base in (ROOT / "data", ROOT / "reports"):
         if not base.exists():
             continue
         for path in sorted(base.rglob("*")):
             if path.suffix not in {".json", ".jsonl"}:
                 continue
             relative = str(path.relative_to(ROOT))
-            if relative in NON_BENCHMARK_PREPROCESSING:
+            if relative in NON_BENCHMARK_PREPROCESSING or relative in {
+                SOURCE_CANDIDATES, SOURCE_ARTICLES, SOURCE_ALIASES,
+            }:
                 continue
             path_parts = Path(relative).parts
-            if (
-                "inputs" in path_parts
-                or path.name in {"input.jsonl", "input_manifest.jsonl", "planned_record_pmids.jsonl"}
-            ):
-                # These are planned/immutable inputs.  They do not imply a model
-                # or human has seen the record, so excluding them would destroy
-                # a valid held-out pool.
+            if "inputs" in path_parts or path.name in {"input.jsonl", "input_manifest.jsonl", "planned_record_pmids.jsonl"}:
+                # A scheduled input does not imply that a model or a reviewer
+                # saw the record. Actual outputs remain exclusion sources.
                 continue
             lowered = relative.lower()
             if not any(token in lowered for token in WORKFLOW_TOKENS):
@@ -161,12 +160,12 @@ def render_html(rows: list[dict[str, Any]], metadata: dict[str, Any]) -> str:
     return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Human Held-out L0/L1 Benchmark v1</title>
 <style>
 :root{{font-family:Arial,"Microsoft YaHei",sans-serif;color:#172b4d;background:#f1f5f9}}body{{margin:0}}header{{position:sticky;top:0;z-index:10;padding:14px 5%;background:#102a43;color:white;box-shadow:0 2px 7px #64748b}}header small{{display:block;margin-top:4px;color:#dbeafe}}main{{max-width:1120px;margin:auto;padding:12px 18px 32px}}.card{{background:#fff;border-radius:10px;padding:22px;margin:16px 0;box-shadow:0 1px 5px #cbd5e1}}h2{{margin:0 0 12px;font-size:19px}}h2 span{{font-size:13px;font-weight:normal;color:#64748b}}h3{{font-size:15px;margin:18px 0 8px}}p{{line-height:1.6}}.candidate{{background:#fff7d6;border-left:4px solid #d69e2e;padding:11px;line-height:1.5}}.mapping,.provenance{{margin-top:11px;padding:10px;background:#eff6ff;border-radius:6px}}summary{{cursor:pointer;font-weight:600}}.abstract{{white-space:pre-wrap;background:#f8fafc;border:1px solid #dbe3ee;padding:13px;border-radius:5px}}.l0,.l1{{margin-top:16px;padding:15px;border-radius:7px}}.l0{{background:#eff6ff;border:1px solid #93c5fd}}.l1{{background:#f0fdf4;border:1px solid #86efac}}label{{display:block;font-weight:600;margin-top:10px}}select,input,textarea{{box-sizing:border-box;width:100%;margin-top:5px;padding:8px;font:inherit;border:1px solid #94a3b8;border-radius:5px;background:white}}textarea{{min-height:75px;resize:vertical}}.grid{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}.hint{{font-size:13px;color:#475569;margin:0}}button{{font:inherit;padding:8px 12px;border:0;border-radius:5px;margin:8px 8px 0 0;cursor:pointer}}.primary{{background:#22c55e;color:white}}.secondary{{background:#dbeafe;color:#172b4d}}.danger{{background:#fee2e2;color:#991b1b}}#progress{{margin-left:8px;font-weight:bold}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}}@media(max-width:700px){{header{{position:static}}main{{padding:10px}}.card{{padding:14px}}.grid{{grid-template-columns:1fr}}}}
-</style></head><body><header><b>Independent Human held-out benchmark · L0/L1</b><small>400 unique PMID samples; no model output is displayed. English title/abstract is the only evidence source. Browser autosave survives Ctrl+R.</small><button type="button" class="primary" id="download">Export review JSON / 导出审阅 JSON</button><label class="secondary" style="display:inline-block;padding:8px 12px;border-radius:5px;cursor:pointer">Import saved JSON / 导入审阅 JSON<input id="import" type="file" accept="application/json" hidden></label><button type="button" class="danger" id="clear">Clear local draft / 清除本机草稿</button><span id="progress"></span></header><main>{cards}</main>
+</style></head><body><header><b>Independent Human held-out benchmark · L0/L1</b><small>{len(rows)} unique PMID samples; no model output is displayed. English title/abstract is the only evidence source. Browser autosave survives Ctrl+R.</small><button type="button" class="primary" id="download">Export review JSON / 导出审阅 JSON</button><label class="secondary" style="display:inline-block;padding:8px 12px;border-radius:5px;cursor:pointer">Import saved JSON / 导入审阅 JSON<input id="import" type="file" accept="application/json" hidden></label><button type="button" class="danger" id="clear">Clear local draft / 清除本机草稿</button><span id="progress"></span></header><main>{cards}</main>
 <script>
 const storageKey='{VERSION}'; const benchmarkMetadata={metadata_json}; const fields=[...document.querySelectorAll('[data-field]')];
 function recordOf(field){{return JSON.parse(field.closest('.card').dataset.record)}}
 function saved(){{try{{return JSON.parse(localStorage.getItem(storageKey)||'{{}}')}}catch{{return {{}}}}}}
-function persist(){{const draft=saved();for(const field of fields){{const meta=recordOf(field);draft[meta.sample_id]??={{...meta}};draft[meta.sample_id][field.dataset.field]=field.value||null;}}localStorage.setItem(storageKey,JSON.stringify(draft));const rows=Object.values(draft);const l0=rows.filter(x=>x.l0_support_status).length;const l1=rows.filter(x=>x.l0_support_status==='ABSTRACT_SUPPORTED'&&x.l1_evidence_span).length;document.querySelector('#progress').textContent=`L0: ${{l0}} / 400 · L1 complete: ${{l1}}`;}}
+function persist(){{const draft=saved();for(const field of fields){{const meta=recordOf(field);draft[meta.sample_id]??={{...meta}};draft[meta.sample_id][field.dataset.field]=field.value||null;}}localStorage.setItem(storageKey,JSON.stringify(draft));const rows=Object.values(draft);const l0=rows.filter(x=>x.l0_support_status).length;const l1=rows.filter(x=>x.l0_support_status==='ABSTRACT_SUPPORTED'&&x.l1_evidence_span).length;document.querySelector('#progress').textContent=`L0: ${{l0}} / {len(rows)} · L1 complete: ${{l1}}`;}}
 function restore(){{const draft=saved();for(const field of fields){{const row=draft[recordOf(field).sample_id]||{{}};field.value=row[field.dataset.field]||'';}}persist();}}
 fields.forEach(field=>{{field.addEventListener('input',persist);field.addEventListener('change',persist);}});window.addEventListener('beforeunload',persist);restore();
 document.querySelector('#download').addEventListener('click',()=>{{persist();const payload={{benchmark_metadata:benchmarkMetadata,reviewed_at_local:new Date().toISOString(),records:Object.values(saved())}};const blob=new Blob([JSON.stringify(payload,null,2)],{{type:'application/json;charset=utf-8'}});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='{VERSION}_review.json';document.body.appendChild(a);a.click();setTimeout(()=>{{URL.revokeObjectURL(a.href);a.remove()}},1000);}});
@@ -181,6 +180,9 @@ def main() -> None:
     parser.add_argument("--stats-output", required=True)
     parser.add_argument("--html-output", required=True)
     parser.add_argument("--seed", type=int, default=20260901)
+    parser.add_argument("--version", default=VERSION)
+    parser.add_argument("--relations", nargs="+", choices=("Activation", "Repression", "Unknown"), default=("Activation", "Repression", "Unknown"))
+    parser.add_argument("--per-relation", type=int, default=133)
     args = parser.parse_args()
     manifest_path, stats_path, html_path = (ROOT / args.manifest_output, ROOT / args.stats_output, ROOT / args.html_output)
     if any(path.exists() for path in (manifest_path, stats_path, html_path)):
@@ -198,7 +200,9 @@ def main() -> None:
             continue
         grouped[source["relation"]][pmid].append(source)
 
-    quotas = {"Activation": 134, "Repression": 133, "Unknown": 133}
+    if args.per_relation < 1:
+        raise ValueError("--per-relation must be positive")
+    quotas = {relation: args.per_relation for relation in args.relations}
     rng = random.Random(args.seed)
     selected: list[dict[str, Any]] = []
     selected_pmids: set[str] = set()
@@ -218,7 +222,7 @@ def main() -> None:
             selected_pmids.add(pmid)
             tf, target = source["tf_mention"], source["object_mention"]
             selected.append({
-                "sample_id": f"{VERSION}_{len(selected) + 1:03d}",
+                "sample_id": f"{args.version}_{len(selected) + 1:03d}",
                 "record_key": "|".join(["human", tf, target, source["relation"], pmid]),
                 "pmid": pmid,
                 "stratum": {"species": "human", "trrust_mor": source["relation"]},
@@ -229,7 +233,7 @@ def main() -> None:
                     "target": {"approved_symbol": target, "mention_candidates": compact_mentions(aliases.get(("human", target)), target)},
                 },
                 "provenance": {
-                    "benchmark_version": VERSION,
+                    "benchmark_version": args.version,
                     "selection_seed": args.seed,
                     "source_candidate_file": SOURCE_CANDIDATES,
                     "source_article_file": SOURCE_ARTICLES,
@@ -240,10 +244,10 @@ def main() -> None:
             })
     rng.shuffle(selected)
     for index, row in enumerate(selected, 1):
-        row["sample_id"] = f"{VERSION}_{index:03d}"
+        row["sample_id"] = f"{args.version}_{index:03d}"
 
     metadata = {
-        "benchmark_version": VERSION,
+        "benchmark_version": args.version,
         "purpose": "Independent Human held-out benchmark with nested L0 support adjudication and L1 evidence-grounded relation extraction; L2 provenance retained but L2 is not annotated in this workbook.",
         "sample_size": len(selected),
         "unique_pmids": len({row["pmid"] for row in selected}),
@@ -255,6 +259,7 @@ def main() -> None:
             SOURCE_ALIASES: sha256(ROOT / SOURCE_ALIASES),
         },
         "workflow_exclusion_pmids": len(excluded_pmids),
+        "reservation_policy": "All selected PMIDs are permanently reserved for this benchmark and must be excluded from later sampling, model inference, translation, training, and benchmark construction workflows.",
         "workflow_inventory": inventory,
         "l0_schema": ["ABSTRACT_SUPPORTED", "ABSTRACT_PARTIAL", "ABSTRACT_INSUFFICIENT", "REVIEW_UNCERTAIN"],
         "l1_policy": "Annotate L1 only for L0 ABSTRACT_SUPPORTED. Copy source-form entity mentions and continuous English evidence span.",

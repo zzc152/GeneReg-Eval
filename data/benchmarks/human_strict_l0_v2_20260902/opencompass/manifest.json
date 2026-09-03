@@ -1,0 +1,30 @@
+{
+  "version": "opencompass_human_strict_l0_v2_20260902",
+  "source": {
+    "data/benchmarks/human_strict_l0_v2_20260902/strict_records.jsonl": "8a8aac17ca07579df5fbe8e93a835cc9ce5b5b76f7d792fa0f45d2de777dfb40",
+    "data/benchmarks/human_strict_l0_v2_20260902/sources/article_records.jsonl": "a21c40868d8bf2793bf55a517f31080b1201641e552378d2deb62ae7f529fdf2"
+  },
+  "prompt_policy": "Title, abstract, and regulator-target query only. Neither TRRUST MoR nor human gold label is shown to the model.",
+  "datasets": {
+    "direction": 171,
+    "presence": 260
+  },
+  "answer_position_counts": {
+    "direction": {
+      "B:Repression": 39,
+      "A:Activation": 47,
+      "A:Repression": 41,
+      "B:Activation": 44
+    },
+    "presence": {
+      "A:REGULATION_PRESENT": 81,
+      "B:REGULATION_PRESENT": 125,
+      "B:NO_REGULATION": 36,
+      "A:NO_REGULATION": 18
+    }
+  },
+  "paths": {
+    "direction": "data/benchmarks/human_strict_l0_v2_20260902/opencompass/human_strict_l0_direction.jsonl",
+    "presence": "data/benchmarks/human_strict_l0_v2_20260902/opencompass/human_strict_l0_presence.jsonl"
+  }
+}

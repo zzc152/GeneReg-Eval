@@ -59,7 +59,7 @@ def question(article: dict[str, Any], candidate: dict[str, Any], task: str) -> s
     ))
 
 
-def materialize(records: list[dict[str, Any]], sources: dict[str, dict[str, Any]]) -> tuple[dict[str, list[dict[str, Any]]], dict[str, Counter]]:
+def materialize(records: list[dict[str, Any]], sources: dict[str, dict[str, Any]], version: str) -> tuple[dict[str, list[dict[str, Any]]], dict[str, Counter]]:
     datasets: dict[str, list[dict[str, Any]]] = {"direction": [], "presence": []}
     option_positions: dict[str, Counter] = {"direction": Counter(), "presence": Counter()}
     for row in records:
@@ -80,7 +80,7 @@ def materialize(records: list[dict[str, Any]], sources: dict[str, dict[str, Any]
             raise ValueError(f"unexpected strict task: {task}")
         # Stable per-item shuffle avoids a fixed A/B label position while making
         # the dataset byte-identical when rebuilt from the same frozen sources.
-        random.Random(f"{VERSION}:{sample_id}").shuffle(labels)
+        random.Random(f"{version}:{sample_id}").shuffle(labels)
         answer = "A" if labels[0] == label else "B"
         option_positions[bucket][f"{answer}:{label}"] += 1
         datasets[bucket].append({
@@ -103,6 +103,7 @@ def main() -> None:
     parser.add_argument("--strict", required=True)
     parser.add_argument("--frozen-source", required=True)
     parser.add_argument("--output-dir", required=True)
+    parser.add_argument("--version", default=VERSION)
     args = parser.parse_args()
     strict_path = ROOT / args.strict
     source_path = ROOT / args.frozen_source
@@ -111,7 +112,7 @@ def main() -> None:
         raise SystemExit(f"refusing to overwrite existing output directory: {output_dir}")
     strict = read_jsonl(strict_path)
     sources = {row["sample_id"]: row for row in read_jsonl(source_path)}
-    datasets, positions = materialize(strict, sources)
+    datasets, positions = materialize(strict, sources, args.version)
     output_dir.mkdir(parents=True)
     paths = {}
     for bucket, rows in datasets.items():
@@ -121,7 +122,7 @@ def main() -> None:
                 handle.write(json.dumps(row, ensure_ascii=False) + "\n")
         paths[bucket] = str(path.relative_to(ROOT))
     manifest = {
-        "version": VERSION,
+        "version": args.version,
         "source": {
             str(strict_path.relative_to(ROOT)): sha256(strict_path),
             str(source_path.relative_to(ROOT)): sha256(source_path),

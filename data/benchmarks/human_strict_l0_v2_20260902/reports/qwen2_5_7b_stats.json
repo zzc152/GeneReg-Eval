@@ -1,0 +1,15 @@
+{
+  "model": "qwen2_5_7b",
+  "total": 431,
+  "correct": 344,
+  "incorrect": 87,
+  "accuracy": 0.7981438515081206,
+  "task_counts": {
+    "KNOWN_DIRECTION": 171,
+    "UNKNOWN_RELATION_PRESENCE": 260
+  },
+  "task_accuracy": {
+    "KNOWN_DIRECTION": 0.8128654970760234,
+    "UNKNOWN_RELATION_PRESENCE": 0.7884615384615384
+  }
+}

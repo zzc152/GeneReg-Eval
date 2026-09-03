@@ -8,44 +8,43 @@ regulation judgment. It separates a curated TRRUST candidate relation, the
 abstract text, model output, and human adjudication; these are never treated as
 interchangeable facts.
 
-## Released benchmark: Human strict L0 v1
+## Released benchmark: Human strict L0 v2
 
-`human_strict_l0_v1_20260901` is a frozen, independently reviewed Human
-held-out benchmark of **267 distinct PMID-linked abstracts**. The model sees
+`human_strict_l0_v2_20260902` is a frozen, independently reviewed Human
+held-out benchmark of **431 distinct PMID-linked abstracts**. The model sees
 only the title, abstract, and candidate regulator/target query. It never sees
 the TRRUST mode of regulation or the human label.
 
 | Task | Question | Labels | Items |
 |---|---|---|---:|
 | `KNOWN_DIRECTION` | What direction is supported for this pair? | `Activation`, `Repression` | 171 |
-| `UNKNOWN_RELATION_PRESENCE` | Is a transcriptional regulatory relationship supported? | `REGULATION_PRESENT`, `NO_REGULATION` | 96 |
+| `UNKNOWN_RELATION_PRESENCE` | Is a transcriptional regulatory relationship supported? | `REGULATION_PRESENT`, `NO_REGULATION` | 260 |
 
 The benchmark deliberately excludes `ABSTRACT_PARTIAL`, unresolved, and
-unreviewed records rather than relabelling them as negatives. There are 248
-records with complete Level-1 evidence annotations, but the current public L0
-score uses all 267 strict records.
+unreviewed records rather than relabelling them as negatives. It retains the
+v1 strict set and adds an independently reviewed TRRUST-Unknown reserve.
 
 The release is under
-[`data/benchmarks/human_strict_l0_v1_20260901`](data/benchmarks/human_strict_l0_v1_20260901).
+[`data/benchmarks/human_strict_l0_v2_20260902`](data/benchmarks/human_strict_l0_v2_20260902).
 It contains frozen source reviews, strict records, OpenCompass-ready MCQ files,
-and result summaries. See its [release notes](data/benchmarks/human_strict_l0_v1_20260901/README.md)
+and result summaries. See its [release notes](data/benchmarks/human_strict_l0_v2_20260902/RELEASE.md)
 for provenance and checksums.
 
 ## Baseline result
 
-Both models answered the exact same 267 questions with deterministic decoding.
+All four models answered the exact same 431 questions with deterministic decoding.
 
 | Model | Overall | Direction | Relation presence |
 |---|---:|---:|---:|
-| Qwen2.5-7B-Instruct | 79.40% (212/267) | 81.29% (139/171) | 76.04% (73/96) |
-| Qwen2.5-32B-AWQ | **90.26% (241/267)** | **91.23% (156/171)** | **88.54% (85/96)** |
+| Qwen2.5-7B-Instruct | 79.81% (344/431) | 81.29% (139/171) | 78.85% (205/260) |
+| Qwen2.5-32B-AWQ | 84.92% (366/431) | 89.47% (153/171) | 81.92% (213/260) |
+| Llama-3.3-70B-Instruct-AWQ | 84.69% (365/431) | **90.64% (155/171)** | 80.77% (210/260) |
+| Mistral-Small-3.1-24B-Instruct | **85.61% (369/431)** | 88.30% (151/171) | **83.85% (218/260)** |
 
-The paired comparison has 33 `7B wrong -> 32B correct` transitions and 4
-`7B correct -> 32B wrong` transitions: a net improvement of **29/267 = 10.86
-percentage points**. Exact two-sided McNemar: `p = 1.08e-6`; paired bootstrap
-(20,000 resamples) 95% CI for the 32B-minus-7B difference: **+6.74 to +15.36
-percentage points**. These results compare different model sizes *and*
-quantization variants; they do not isolate scale as the sole causal factor.
+Full per-item inputs, raw outputs, parsed predictions, and correctness markers
+for all four models are released under the v2 benchmark's `reports/` directory.
+These results compare different architectures, sizes, quantization variants,
+and inference backends; they do not isolate scale as the sole causal factor.
 
 ## Reproduce the benchmark materialization
 
@@ -122,5 +121,5 @@ docs/               protocol, architecture, adjudication, taxonomy
 ## Citation
 
 This is an early benchmark release. If you use it, cite the repository commit
-and benchmark version `human_strict_l0_v1_20260901`; also cite TRRUST and the
+and benchmark version `human_strict_l0_v2_20260902`; also cite TRRUST and the
 underlying PubMed records identified by the released PMIDs.

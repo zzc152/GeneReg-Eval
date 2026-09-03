@@ -1,0 +1,569 @@
+{
+  "benchmark_metadata": {
+    "name": "human_heldout_l0_l1_benchmark_v1_20260901_uncertain_resolution",
+    "source_review": "human_heldout_l0_l1_benchmark_v1_20260901_reviewed.json",
+    "record_count": 20
+  },
+  "records": [
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_005",
+      "record_key": "human|REL|IL2|Unknown|8920856",
+      "pmid": "8920856",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "REL",
+        "object_mention": "IL2",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "8920856",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "摘要中的功能证据来自 c-rel 缺失小鼠 T 细胞；human 候选边的物种边界无法仅凭页面可靠闭合。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_051",
+      "record_key": "human|RUNX1|FHL2|Unknown|18768464",
+      "pmid": "18768464",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "RUNX1",
+        "object_mention": "FHL2",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "18768464",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": "FHL2、RUNX1 与 TRAF6 形成三元 DNA-binding/transactivation complex，不能完全把复合物效应单独归因于 RUNX1。这里必须单独标出！",
+      "l1_evidence_span": "Importantly, TRAF6 recognizes FHL2 and RUNX1 in osteoclast nuclei, and the three molecules form a DNA-binding complex that recognizes and transactivates the RUNX1 response element in the fhl2 promoter.",
+      "l1_regulator_mention": "RUNX1",
+      "l1_object_mention": "FHL2",
+      "l1_relation": "Unknown",
+      "l1_condition_note": "biological_system = osteoclasts other_condition = TRAF6/FHL2/RUNX1 DNA-binding transcriptional complex",
+      "l1_note": "复合物必须单独标出"
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_063",
+      "record_key": "human|RARA|CCNA1|Repression|11090075",
+      "pmid": "11090075",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "RARA",
+        "object_mention": "CCNA1",
+        "relation": "Repression"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "11090075",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Further studies using ligands selective for various retinoic acid receptors suggested that cyclin A1 expression is negatively regulated by activated RAR alpha.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "other_condition = activated RARα",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_071",
+      "record_key": "human|KLF2|THBD|Activation|19661484",
+      "pmid": "19661484",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "KLF2",
+        "object_mention": "THBD",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "19661484",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Thrombomodulin upregulation was independent of NF-kappaB signaling, a principal target of proteasome inhibitors, but was instead a direct consequence of increased expression of the Krüppel-like transcription factors, KLF2 and KLF4.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "biological_system = endothelial cells treatment_or_stimulus = proteasome inhibitor treatment",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_102",
+      "record_key": "human|YY1|VEGFB|Activation|20660740",
+      "pmid": "20660740",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "YY1",
+        "object_mention": "VEGFB",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "20660740",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "摘要以 YY1-HIF-1α complex 和泛称 VEGF promoters 描述效应，VEGFB 的成员级归因边界不够清楚。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_105",
+      "record_key": "human|SMAD3|SERPINE1|Activation|9765209",
+      "pmid": "9765209",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SMAD3",
+        "object_mention": "SERPINE1",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "9765209",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "TFE3 and Smad3 synergistically activate the PE2 promoter and phosphorylated Smad3 and Smad4 bind to a sequence adjacent to the TFE3-binding site in this promoter.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "biological_system: null treatment_or_stimulus: TGF-beta other_condition: TFE3/Smad3 cooperative regulation; Smad4 participates in the promoter-bound Smad complex",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_123",
+      "record_key": "human|SP1|SMPD1|Activation|10224156",
+      "pmid": "10224156",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP1",
+        "object_mention": "SMPD1",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10224156",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "A PMA responsive element was localized to a region between -319 and -219 bp upstream of the initiation codon and co-transfections with transcription factor expression plasmids for AP-2 and Sp1 resulted in augmented ASM promoter activity, which was abolished when the binding sites for these two factors were deleted.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: THP-1 monocytic leukemia cells / mononuclear phagocytes biological_state: macrophage differentiation treatment_or_stimulus: PMA time: null other_condition: AP-2/Sp1 concerted promoter regulation",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_133",
+      "record_key": "human|SRF|SAMD4A|Activation|16814806",
+      "pmid": "16814806",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SRF",
+        "object_mention": "SAMD4A",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "16814806",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "Target （smooth muscle gamma-actin (SMGA) gene promoter）映射到 SAMD4A 的对象边界需要人工确认。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_134",
+      "record_key": "human|SRY|SOX9|Activation|19753101",
+      "pmid": "19753101",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SRY",
+        "object_mention": "SOX9",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "19753101",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_INSUFFICIENT",
+      "l0_note": "转录调控证据明确来自 developing mouse gonad，不能自动作为 human SRY→SOX9 边。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_174",
+      "record_key": "human|TLX1|ALDH1A1|Unknown|18082256",
+      "pmid": "18082256",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "TLX1",
+        "object_mention": "ALDH1A1",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "18082256",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Here, we confirm regulation of ALDH1A1 transcription by TLX1 and show that ALDH1A1 can profoundly perturb murine hematopoiesis by promoting myeloid differentiation at the expense of lymphopoiesis.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "null",
+      "l1_note": "The abstract explicitly confirms transcriptional regulation of ALDH1A1 by TLX1 and identifies ALDH1A1 as a TLX1 transcriptional target. The murine designation applies to the downstream hematopoietic functional experiments and is not explicitly attached to the TLX1→ALDH1A1 regulatory statement."
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_186",
+      "record_key": "human|STAT1|HMOX1|Activation|19129475",
+      "pmid": "19129475",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "STAT1",
+        "object_mention": "HMOX1",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "19129475",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "vascular endothelial growth factor itself triggered STAT1/STAT3 heterodimer formation, which bound to and activated the HO-1 promoter.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: primary macrophages biological_state: alternative/M2-like macrophage polarization treatment_or_stimulus: VEGFA time: 24 h other_condition: STAT1/STAT3 heterodimer",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_244",
+      "record_key": "human|PPARA|LPL|Activation|10634806",
+      "pmid": "10634806",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "PPARA",
+        "object_mention": "LPL",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10634806",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_INSUFFICIENT",
+      "l0_note": "针对 LPL promoter 的功能/结合实验明确是在 murine J774 macrophages。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_248",
+      "record_key": "human|NR4A3|PPARG|Repression|18855877",
+      "pmid": "18855877",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "NR4A3",
+        "object_mention": "PPARG",
+        "relation": "Repression"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "18855877",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_INSUFFICIENT",
+      "l0_note": "调控因子是 EWSR1/NR4A3 融合蛋白且方向为激活，不能自动映射到野生型 NR4A3 Repression。\n负向作用对象首先是融合蛋白的转录激活活性，而不是直接把 PPARG 定义为 NR4A3 的 repression target。\n所以关系链更准确是：\nEWSR1/NR4A3 → PPARG promoter activation ↑\nnative truncated NR4A3 isoform ┤ EWSR1/NR4A3-mediated activation\n而不是：\nNR4A3 ┤ PPARG transcription",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_311",
+      "record_key": "human|PPARA|ANGPTL4|Activation|12099716",
+      "pmid": "12099716",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "PPARA",
+        "object_mention": "ANGPTL4",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "12099716",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_INSUFFICIENT",
+      "l0_note": "真正的问题是 species：\n\nneonatal rat cardiomyocytes\n\n支持 PPARα→PGAR/ANGPTL4 正向关系的那条实验明确来自 rat。后面作者还特意说：\n\nhypoxic activation of PGAR expression is likely mediated by HIF-1 but not the PPARalpha/RXR pathway.\n\n这句话不是否认 PPARα 能调控 PGAR，而是在说：\n\nhypoxia → PGAR 这条诱导机制不是通过 PPARα/RXR。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_315",
+      "record_key": "human|SPI1|CTSK|Unknown|15304486",
+      "pmid": "15304486",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SPI1",
+        "object_mention": "CTSK",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "15304486",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "The reporter gene analysis with sequential 5'-deletion constructs of the cathepsin K gene promoter indicates that limited sets of the transcription factors such as NFATc1, PU.1, and microphthalmia transcription factor indeed enhance synergistically the gene expression when overexpressed in RAW264 cells.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: null biological_system: osteoclasts / osteoclast differentiation biological_state: osteoclastogenesis treatment_or_stimulus: RANKL time: null other_condition: NFATc1/PU.1/MITF cooperative transcriptional regulation with p38 MAP kinase participation",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_334",
+      "record_key": "human|SP1|APOC3|Unknown|7640286",
+      "pmid": "7640286",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP1",
+        "object_mention": "APOC3",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "7640286",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "这一条样本异常，难以判断。\n标题本身明确写：\n\nComplex interactions between SP1 bound to multiple distal regulatory sites and HNF-4 bound to the proximal promoter lead to transcriptional activation of liver-specific human APOCIII gene.\n\n这已经明确表达：\nSP1 + HNF-4 cooperative regulation → APOC3 transcriptional activation\n按照我们前面统一的规则，协同调控不妨碍拆出 SP1 individual edge。\n标题 + 摘要共同作为 support source，才能推出。并且原文被截断，这个样本丢弃\ndrop_it",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_342",
+      "record_key": "human|RELA|FN1|Unknown|22223884",
+      "pmid": "22223884",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "RELA",
+        "object_mention": "FN1",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "22223884",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Together with Snail1, the p65 subunit of NF-κB and PARP1 bound to the FN1 promoter. We detected nuclear interaction of these proteins and demonstrated the requirement of all three for FN1 transcription.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: null biological_system: epithelial cells undergoing EMT / fibroblasts biological_state: epithelial-mesenchymal transition treatment_or_stimulus: null time: null other_condition: Snail1/RELA(p65)/PARP1 cooperative transcriptional complex",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_371",
+      "record_key": "human|SPI1|CD40|Activation|10823830",
+      "pmid": "10823830",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SPI1",
+        "object_mention": "CD40",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10823830",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_INSUFFICIENT",
+      "l0_note": "Ets 元件可由 PU.1 and/or Spi-B 结合，无法仅凭摘要确认候选实体 SPI1。\n摘要没有把 SPI1/PU.1 对 CD40 的功能作用单独闭合。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_373",
+      "record_key": "human|USF1|PTPN6|Unknown|12071971",
+      "pmid": "12071971",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "USF1",
+        "object_mention": "PTPN6",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "12071971",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_INSUFFICIENT",
+      "l0_note": "功能元件由 USF1/USF2 heterodimer 结合，缺少 USF1 单独调控 PTPN6 的证据。\n功能效果落在 E-box 元件上，TF 证据落在 USF1/USF2 heterodimer 上，两者之间没有 USF1-specific 的功能闭合。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_heldout_l0_l1_benchmark_v1_20260901_378",
+      "record_key": "human|SIX1|VEGFC|Activation|22466647",
+      "pmid": "22466647",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SIX1",
+        "object_mention": "VEGFC",
+        "relation": "Activation"
+      },
+      "provenance": {
+        "benchmark_version": "human_heldout_l0_l1_benchmark_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "22466647",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "In a model in which human breast cancer cells were injected into immune-compromised mice, we found that SIX1 expression promoted peritumoral and intratumoral lymphangiogenesis, lymphatic invasion, and distant metastasis of breast cancer cells. SIX1 induced transcription of the prolymphangiogenic factor VEGF-C, and this was required for lymphangiogenesis and lymphatic metastasis.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: human breast cancer cells in an immunocompromised mouse xenograft model biological_state: breast cancer treatment_or_stimulus: null time: null other_condition: xenograft context",
+      "l1_note": "合理的证据归属是：\n\nhuman breast cancer cells in an immunocompromised mouse xenograft model\n\n而且关系非常明确：\n\nSIX1 → induced transcription of VEGF-C\n\n这已经直接支持 Activation。\n\n后面这句：\n\nUsing a mouse mammary carcinoma model...\n\n才明确切换到了真正的 mouse mammary carcinoma model。不能把后面的 mouse context retroactively 套到前面的 human-cell xenograft experiment 上。"
+    }
+  ]
+}

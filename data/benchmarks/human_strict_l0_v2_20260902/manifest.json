@@ -1,0 +1,32 @@
+{
+  "benchmark_version": "human_strict_l0_v2_20260902",
+  "scope": "Human, PubMed title/abstract only, strict L0 classification.",
+  "composition": {
+    "retained_human_strict_l0_v1_records": 267,
+    "added_independent_trrust_unknown_reserve_records": 164,
+    "total_records": 431,
+    "unique_pmids": 431
+  },
+  "tasks": {
+    "UNKNOWN_RELATION_PRESENCE": 260,
+    "KNOWN_DIRECTION": 171
+  },
+  "labels": {
+    "REGULATION_PRESENT": 206,
+    "Repression": 80,
+    "Activation": 91,
+    "NO_REGULATION": 54
+  },
+  "independence": {
+    "checked_cross_component_sample_id_overlap": false,
+    "checked_cross_component_pmid_overlap": false,
+    "unknown_reserve_policy": "All 200 reserve PMIDs, including 36 excluded from strict scoring, remain permanently excluded from later construction pools."
+  },
+  "input_sha256": {
+    "data/benchmarks/human_strict_l0_v1_20260901/strict_records.jsonl": "f93cc7b17d6519c291106b28021466177c6d0f0b4c64ca014981d3c8c46d30fd",
+    "data/benchmarks/human_unknown_l0_benchmark_v2_20260902/strict_unknown_l0.jsonl": "33e5a5db7d8770b2ee69e401172a6a4675cf46113bb6d11385fd2ff30660bc8c",
+    "data/benchmarks/human_strict_l0_v1_20260901/sources/article_records.jsonl": "e3c52116e9bec57023f69ab11384cbfd77d0d4c445d17d18f92a7fbc2c625726",
+    "data/benchmarks/human_unknown_l0_benchmark_v2_20260902/sources/reserve_manifest.jsonl": "573f09350409256c428739966f60d85c25f5814cda541bde66a10c527fe8646e"
+  },
+  "model_input_policy": "Models see only title, abstract, and candidate regulator-target query; no TRRUST MoR or human gold label."
+}

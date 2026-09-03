@@ -1,0 +1,652 @@
+{
+  "benchmark_metadata": {
+    "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_uncertain_resolution",
+    "record_count": 23
+  },
+  "records": [
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_001",
+      "record_key": "human|PHOX2A|DBH|Unknown|11034547",
+      "pmid": "11034547",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "PHOX2A",
+        "object_mention": "DBH",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "11034547",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_INSUFFICIENT",
+      "l0_note": "功能实验使用 rat DBH promoter；human 候选边的 Target 物种边界不能自动合并。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_008",
+      "record_key": "human|SP3|AGTR1|Unknown|15507319",
+      "pmid": "15507319",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP3",
+        "object_mention": "AGTR1",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "15507319",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Taken together, our data demonstrate that HTR-8/SVNeo cells express functional AT1Rs and that basal level expression of this gene is regulated, in part, by Sp1 and Sp3 in this cell line.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: HTR-8/SVNeo immortalized trophoblast cells biological_state: null treatment_or_stimulus: null time: null other_condition: Sp1/Sp3-mediated basal regulation of the hAT1R promoter",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_021",
+      "record_key": "human|SPI1|P2RY10|Unknown|10567398",
+      "pmid": "10567398",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SPI1",
+        "object_mention": "P2RY10",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10567398",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "PU.1 与 Spi-B 共同缺失/共享结合位点，无法可靠分离 SPI1 的独立贡献。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_025",
+      "record_key": "human|SSX2|MMP2|Unknown|15781633",
+      "pmid": "15781633",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SSX2",
+        "object_mention": "MMP2",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "15781633",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "摘要只写 SSX 家族，未明示 SSX2；成员级实体不能自动等同。\n还没有明确闭合“转录调控”\n\n摘要说的是：\n\na reduction in MMP2 levels\n\n以及标题里的：\nmatrix metalloproteinase 2 expression\n但没有明确说明：\nMMP2 transcription / mRNA / promoter activity\n所以即使忽略 SSX2 的成员问题，证据仍然更像：\nSSX family → MMP2 expression level\n而不是明确的：\nSSX2 → MMP2 transcription",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_027",
+      "record_key": "human|TFAP2A|CGA|Unknown|10648798",
+      "pmid": "10648798",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "TFAP2A",
+        "object_mention": "CGA",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10648798",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "AP-2α 与 AP-2γ 均出现，hCG 调控被归于 AP-2 family，TFAP2A 单独归因不清。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_031",
+      "record_key": "human|SP3|CA9|Unknown|12615703",
+      "pmid": "12615703",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP3",
+        "object_mention": "CA9",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "12615703",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "功能证据使用 SP1/SP3 合并活性及非成员特异抑制剂，SP3 单独贡献不清。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_041",
+      "record_key": "human|SP1|CD28|Unknown|10510368",
+      "pmid": "10510368",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP1",
+        "object_mention": "CD28",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10510368",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "CD28 positive element 同时结合 Sp1 与 EGR-1，现有功能证据未分离 SP1 单独贡献。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_049",
+      "record_key": "human|TCF4|FST|Unknown|24667650",
+      "pmid": "24667650",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "TCF4",
+        "object_mention": "FST",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "24667650",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "FST 效应被归因于 β-catenin/TCF4 复合体 recruitment，无法单独归因候选 TCF4。\n原文关键句：\n\nBCAS2 upregulation, which inhibited FST transcription through the downregulation of β-catenin/TCF4 recruitment to the FST promoter.\n\n意思是：\n\nBCAS2 上调 → β-catenin/TCF4 在 FST promoter 上的 recruitment ↓ → FST transcription ↓。\n\n从机制方向反推，摘要确实暗示：\n\nβ-catenin/TCF4 promoter recruitment 有利于 FST transcription。\n\n但是这里的 TCF4 出现在经典的：\n\nβ-catenin/TCF4\n\n复合体语境中。\n\n而你的候选实体是：\n\nTCF4 = E2-2 / ITF2 / class B bHLH transcription factor 4\n\n摘要本身没有提供任何信息证明这里的 TCF4 就是这个候选实体。相反，β-catenin/TCF4 这种写法存在明显的旧命名/实体歧义，因此不能直接把字符串 TCF4 对齐到候选 TCF4。\n\n所以不能建立：\n\nTCF4(E2-2) → FST\n\n即使暂时忽略实体问题\n\n证据也仍然是：\n\nβ-catenin/TCF4 recruitment → FST transcription\n\n而不是 TCF4-specific perturbation。\n\n但如果实体真的确认是候选 TF，我反而不会仅因为它和 β-catenin 组成复合体就直接判 NO；复合体参与本身可以支持 individual edge。\n\n这条真正致命的是：\n\ncandidate TCF4 的实体身份没有闭合。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_059",
+      "record_key": "human|PPARA|FABP4|Unknown|19717768",
+      "pmid": "19717768",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "PPARA",
+        "object_mention": "FABP4",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "19717768",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "摘要只写泛称 PPAR ，不能自动落到 human PPARA。\n第二是证据本身主要还是 conserved cis-element / motif-level，而不是功能性转录调控实验。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_070",
+      "record_key": "human|STAT2|IFIT3|Unknown|19351818",
+      "pmid": "19351818",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "STAT2",
+        "object_mention": "IFIT3",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "19351818",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Here, we report that signal transducer and activator of transcription (STAT) 2 together with IFN regulatory factor (IRF)-9 can effectively drive the transcription of RIG-G gene by their functional interaction through a STAT1-independent manner, even without the tyrosine phosphorylation of STAT2. The complex IRF-9/STAT2 is both necessary and sufficient for RIG-G gene expression.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: null biological_system: null biological_state: null treatment_or_stimulus: null time: null other_condition: IRF-9/STAT2 transcriptional complex; STAT1-independent",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_071",
+      "record_key": "human|SREBF1|LPIN1|Unknown|19553673",
+      "pmid": "19553673",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SREBF1",
+        "object_mention": "LPIN1",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "19553673",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Using a luciferase assay, electrophoretic mobility shift assay, and chromatin immunoprecipitation assay, we demonstrated that these elements are responsible for the transcription of LPIN1 gene, mediated by SREBP-1 (sterol regulatory element-binding protein 1) and nuclear factor Y.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: hepatoblastoma cells biological_state: null treatment_or_stimulus: cellular sterols time: null other_condition: SREBP-1/NF-Y cooperative regulation through the LPIN1 sterol-response element and NF-Y-binding sites",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_073",
+      "record_key": "human|SP1|SERPINE1|Unknown|10880342",
+      "pmid": "10880342",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP1",
+        "object_mention": "SERPINE1",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10880342",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "The major complex was supershifted by anti-Sp1 antibody. The methylation-interference experiment demonstrated that human recombinant Sp1 bound to the so-called GT box (TGGGTGGGGCT, -78 to -69), which contains the Sp1-box 1. The complex that migrated with anti-Sp1 antibody was enhanced in the cells treated with Ang II. Further, D-Sp1-ODN (-85 to -63) containing the GT box attenuated up-regulation of PAI-1 mRNA expression induced by Ang II to a level (68+/-9% inhibition) comparable to D-P-ODN, whereas ODN with four mutations in the GT box had no effect.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: mesangial cells biological_state: null treatment_or_stimulus: Angiotensin II time: null other_condition: Sp1 binding to the functional GT box/Sp1-box 1 in the PAI-1 promoter",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_074",
+      "record_key": "human|POU1F1|PRL|Unknown|11081207",
+      "pmid": "11081207",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "POU1F1",
+        "object_mention": "PRL",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "11081207",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_INSUFFICIENT",
+      "l0_note": "摘要的 GH/PRL/TSH 表述可能指细胞谱系/激素表型，PRL 基因对象边界不够明确。\n摘要没有提供 POU1F1/Pit-1 调控 PRL 基因转录或表达的证据。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_085",
+      "record_key": "human|SP3|CYP3A5|Unknown|11485307",
+      "pmid": "11485307",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP3",
+        "object_mention": "CYP3A5",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "11485307",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Thus, we conclude that the transcription of the CYP3A5 gene is cooperatively regulated by NF-Y, Sp1, and Sp3 in HepG2 cells.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: HepG2 hepatoma cells biological_state: null treatment_or_stimulus: null time: null other_condition: cooperative regulation by NF-Y, Sp1, and Sp3 through the CYP3A5 CCAAT box and BTE",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_093",
+      "record_key": "human|TCF4|BCL2|Unknown|23671559",
+      "pmid": "23671559",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "TCF4",
+        "object_mention": "BCL2",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "23671559",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "We found that BMI1 regulates (i) activity of TCF4 transcriptional factor and (ii) binding of TCF4 to the promoter region of anti-apoptotic BCL2 gene. Notably, an increased TCF4 occupancy on BCL2 gene was observed in prostatic tissues exhibiting high BMI1 levels. Using tumor cells other than CaP, we also showed that regulation of TCF4-mediated BCL2 by BMI1 is universal.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: prostate cancer cells / prostatic tissues biological_state: prostate cancer treatment_or_stimulus: null time: null other_condition: BMI1-regulated TCF4 activity and recruitment to the BCL2 promoter",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_116",
+      "record_key": "human|USF2|ASPH|Unknown|19087304",
+      "pmid": "19087304",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "USF2",
+        "object_mention": "ASPH",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "19087304",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_PARTIAL",
+      "l0_note": "USF1/USF2 均结合，但功能性 RNA interference 只针对 USF1；USF2 单独归因不清。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_118",
+      "record_key": "human|STAT1|PSMB9|Unknown|16703666",
+      "pmid": "16703666",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "STAT1",
+        "object_mention": "PSMB9",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "16703666",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Intracellular Tat sequesters IRF-1 (interferon-regulatory factor-1) from its cognate promoter element, where normally it associates with STAT1 (signal transducer and activator of transcription 1) to activate basal transcription of the LMP2 gene.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: null biological_system: null biological_state: null treatment_or_stimulus: null time: null other_condition: IRF-1/STAT1 cooperative complex activating basal LMP2/PSMB9 transcription",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_145",
+      "record_key": "human|TCF7L2|GLCE|Unknown|22805760",
+      "pmid": "22805760",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "TCF7L2",
+        "object_mention": "GLCE",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "22805760",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Although TSA treatment significantly repressed canonical WNT signaling in MCF7 cells, it did not influence endogenous TCF4/β-catenin mRNA levels and activated TCF4/β-catenin-driven transcription from the GLCE promoter, indicating GLCE as a novel target for TCF4/β-catenin complex in breast cancer cells.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: null biological_system: breast cancer cells biological_state: breast cancer treatment_or_stimulus: TSA time: null other_condition: TCF4/β-catenin transactivation complex in a permissive/activated chromatin context",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_173",
+      "record_key": "human|POU3F1|GNRH1|Unknown|9032292",
+      "pmid": "9032292",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "POU3F1",
+        "object_mention": "GNRH1",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "9032292",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "REVIEW_UNCERTAIN",
+      "l0_note": "功能证据来自 rat GnRH promoter 与 rat neurons，human 候选边物种边界不清。",
+      "l1_evidence_span": null,
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": null,
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_177",
+      "record_key": "human|TP53|TCEAL1|Unknown|20421190",
+      "pmid": "20421190",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "TP53",
+        "object_mention": "TCEAL1",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "20421190",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Microcystin-LR induced the phosphorylation and accumulation of p53 in HEK293-OATP1B3 cells, which resulted in up-regulation of the expression of p53 transcript targets, including p21 and seven in absentia homolog 1 (siah-1).",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: HEK293-OATP1B3 cells biological_state: null treatment_or_stimulus: microcystin-LR time: null other_condition: p53 phosphorylation and accumulation",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_181",
+      "record_key": "human|TFAP2A|ADM|Unknown|10848972",
+      "pmid": "10848972",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "TFAP2A",
+        "object_mention": "ADM",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10848972",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Transient transfection assay revealed that a cis-acting region (positions -70 to -30) of human adrenomedullin gene was necessary for TPA-induced reporter gene expression. This region contains multiple copies of activator protein 2 (AP-2) binding sites, which are bound by purified AP-2 protein, as judged by electrophoretic mobility shift assay.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: THP-1 acute monocytic leukemia cells biological_state: differentiation into macrophage-like cells treatment_or_stimulus: TPA time: 24 h other_condition: AP-2 binding to the -70 to -30 cis-regulatory region of the ADM promoter",
+      "l1_note": "应把文中的 AP-2 对齐到候选 TFAP2A。\n这条和之前 TFAP2A → CGA 不一样：那篇摘要明确说 previous work did not distinguish between AP-2 family members，而且当前研究重点反而指向 AP-2γ；这里没有这种成员冲突"
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_184",
+      "record_key": "human|SP1|IGFBP4|Unknown|10342835",
+      "pmid": "10342835",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP1",
+        "object_mention": "IGFBP4",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10342835",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Gel mobility shift assays using 32P-labeled -569 to -540 and -83 to -54 oligonucleotides from the IGFBP-4 gene promoter showed that Sp1 protein bound these oligonucleotides to form a retarded band, and the intensity of the band was competitively decreased after coincubation with unlabeled IGFBP-4-derived and consensus Sp1 oligonucleotides. Mutation of the GC-rich sites within these sequences resulted in loss of the retarded band formation. Wild-type human estrogen receptor did not bind directly to the IGFBP-4 oligonucleotides; however, human estrogen receptor enhanced Sp1-DNA binding in a concentration-dependent manner.The results of this study demonstrate that at least two GC-rich sequences at -559 to -553 and -72 to -64 are required for induction of IGFBP-4 gene expression by E2 in MCF-7 cells.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: MCF-7 breast cancer cells biological_state: breast cancer treatment_or_stimulus: 17beta-estradiol (E2) time: null other_condition: estrogen receptor-enhanced Sp1 binding to two functional GC-rich elements in the IGFBP4 promoter",
+      "l1_note": null
+    },
+    {
+      "sample_id": "human_unknown_l0_l1_benchmark_reserve_v1_20260901_187",
+      "record_key": "human|SP1|PLAU|Unknown|10361124",
+      "pmid": "10361124",
+      "species": "human",
+      "candidate": {
+        "tf_mention": "SP1",
+        "object_mention": "PLAU",
+        "relation": "Unknown"
+      },
+      "provenance": {
+        "benchmark_version": "human_unknown_l0_l1_benchmark_reserve_v1_20260901",
+        "selection_seed": 20260901,
+        "source_candidate_file": "data/intermediate/trrust_entity_both_mentioned_v1_20260826.jsonl",
+        "source_article_file": "data/intermediate/trrust_pubmed_articles_v1_20260826.jsonl",
+        "source_alias_file": "data/intermediate/gene_alias_mapping_v1_20260826.jsonl",
+        "source_pmid": "10361124",
+        "workflow_exclusion": "PMID absent from frozen inventory of all pre-existing review/model/teacher workflow artifacts."
+      },
+      "l0_support_status": "ABSTRACT_SUPPORTED",
+      "l0_note": null,
+      "l1_evidence_span": "Finally, Sp1 and RAR/RXR synergistically enhanced the transactivation activity of the uPA promoter. These results suggest that (1) RA induces RARs mainly via RARalpha and that (2) RAR/RXR physically and functionally interact with Sp1, resulting in a potentiation of uPA transcription.",
+      "l1_regulator_mention": null,
+      "l1_object_mention": null,
+      "l1_relation": null,
+      "l1_condition_note": "species: human biological_system: aortic endothelial cells biological_state: null treatment_or_stimulus: retinoic acid (RA) time: null other_condition: RAR/RXR–Sp1 cooperative transcriptional activation at the uPA/PLAU promoter GC box",
+      "l1_note": null
+    }
+  ]
+}
